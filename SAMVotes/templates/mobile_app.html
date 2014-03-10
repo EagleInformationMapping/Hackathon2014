@@ -5,10 +5,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="static/images/SAM-76x76.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="static/images/SAM-76x76.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="static/images/SAM-120x120.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="static/images/SAM-152x152.png">
+    <link rel="apple-touch-icon" href="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/SAM-76x76.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/SAM-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/SAM-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/SAM-152x152.png">
     <title>SAM Votes!</title>
     <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css">
 {#    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css">#}
@@ -308,7 +308,7 @@
                 var pt = esri.geometry.geographicToWebMercator(new Point(position.coords.longitude, position.coords.latitude));
                 map_location = new Graphic(pt);
                 map.centerAndZoom(pt, 13);
-                var symbol = new PictureMarkerSymbol("static/images/bluedot.png", 20, 20);
+                var symbol = new PictureMarkerSymbol("http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/bluedot.png", 20, 20);
                 map.graphics.add(new Graphic(pt, symbol));
                 console.dir(position);
               }
