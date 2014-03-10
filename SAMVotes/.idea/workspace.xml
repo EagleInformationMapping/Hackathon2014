@@ -26,7 +26,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vote_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="26" selection-end="108" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+            <state line="9" column="12" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
               <folding>
                 <element signature="e#26#59#0" expanded="true" />
               </folding>
@@ -37,7 +37,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="-0.18378378" vertical-offset="102" max-vertical-offset="612">
+            <state line="20" column="0" selection-start="648" selection-end="743" vertical-scroll-proportion="0.36756757" vertical-offset="204" max-vertical-offset="612">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -533,7 +533,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="26" selection-end="108" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+        <state line="9" column="12" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
           <folding>
             <element signature="e#26#59#0" expanded="true" />
           </folding>
@@ -542,7 +542,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="-0.18378378" vertical-offset="102" max-vertical-offset="612">
+        <state line="20" column="0" selection-start="648" selection-end="743" vertical-scroll-proportion="0.36756757" vertical-offset="204" max-vertical-offset="612">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
