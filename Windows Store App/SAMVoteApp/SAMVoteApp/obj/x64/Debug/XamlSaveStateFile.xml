@@ -1,0 +1,15 @@
+<XamlCompilerSaveState>
+  <ReferenceAssemblyList>
+    <LocalAssembly PathName="c:\users\jamie\documents\visual studio 2013\projects\samvoteapp\samvoteapp\obj\x64\debug\intermediatexaml\samvoteapp.exe" HashGuid="758e4d08-fc7a-0f61-1e9c-14a871461a4c" />
+    <ReferenceAssembly PathName="c:\program files (x86)\arcgis sdks\dotnet10.2.2\windowsstore\references\commonconfiguration\x64\esri.arcgisruntime.dll" HashGuid="28d3c97a-3a0c-ec13-6f0e-d64e57263b6c" />
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\microsoft.vclibs\12.0\references\commonconfiguration\neutral\platform.winmd" HashGuid="58b6b6d1-928e-9908-9804-eb460e5e101b" />
+    <ReferenceAssembly PathName="c:\program files (x86)\arcgis sdks\dotnet10.2.2\windowsstore\references\commonconfiguration\neutral\runtimecorenet.winmd" HashGuid="a1902451-961a-ed3a-3694-a376236e732e" />
+    <ReferenceAssembly PathName="c:\program files (x86)\telerik\ui for windows 8.1 xaml q1 2014\extensionsdks\core\references\commonconfiguration\neutral\telerik.core.dll" HashGuid="f12ec990-e561-d983-eb61-4a0ee18a55a8" />
+    <ReferenceAssembly PathName="c:\program files (x86)\telerik\ui for windows 8.1 xaml q1 2014\extensionsdks\core\references\commonconfiguration\neutral\telerik.ui.xaml.chart.dll" HashGuid="7a66b89e-cfea-38ab-6dd0-3e8557341cce" />
+    <ReferenceAssembly PathName="c:\program files (x86)\telerik\ui for windows 8.1 xaml q1 2014\extensionsdks\core\references\commonconfiguration\neutral\telerik.ui.xaml.datavisualization.dll" HashGuid="7a31811e-8d8f-d735-9e61-a82c7cced97e" />
+    <ReferenceAssembly PathName="c:\program files (x86)\telerik\ui for windows 8.1 xaml q1 2014\extensionsdks\core\references\commonconfiguration\neutral\telerik.ui.xaml.grid.dll" HashGuid="bd6e2839-9fbf-82bc-52c9-f8b6a2793919" />
+    <ReferenceAssembly PathName="c:\program files (x86)\telerik\ui for windows 8.1 xaml q1 2014\extensionsdks\core\references\commonconfiguration\neutral\telerik.ui.xaml.input.dll" HashGuid="f3b54f67-0283-ffe1-573a-e9d7706bf0e7" />
+    <ReferenceAssembly PathName="c:\program files (x86)\telerik\ui for windows 8.1 xaml q1 2014\extensionsdks\core\references\commonconfiguration\neutral\telerik.ui.xaml.primitives.dll" HashGuid="579b261b-9557-a6df-a326-ac5f003b2c9e" />
+    <ReferenceAssembly PathName="c:\users\jamie\documents\visual studio 2013\projects\samvoteapp\packages\newtonsoft.json.6.0.1\lib\netcore45\newtonsoft.json.dll" HashGuid="09c236d1-053d-8905-8ef0-17027540c930" />
+  </ReferenceAssemblyList>
+</XamlCompilerSaveState>

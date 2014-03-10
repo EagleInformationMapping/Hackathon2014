@@ -31,6 +31,11 @@
           height:	100%;
         }
 
+        p.gold{
+            font-family: Arial, sans-serif;
+            color: #D9B516;
+            }
+
 
     </style>
 
@@ -105,7 +110,7 @@
 
                 var polling_info_template = new InfoTemplate();
                 polling_info_template.setTitle("${Location_Name}");
-                polling_info_template.setContent("${Location_Name}");
+                polling_info_template.setContent('<div style="width: 300px; background-color: #0B1A8D;" ><p align="center" class="gold">${Location_Name}</p><p align="center" class="gold">${Wait_Time} Min. Wait</p><p align="center" class="gold">${Address}</p></div>');
                 var polling_layer_options = {
                                                 refreshInterval:1,
                                                 infoTemplate: polling_info_template,
@@ -309,7 +314,7 @@
                 var pt = esri.geometry.geographicToWebMercator(new Point(position.coords.longitude, position.coords.latitude));
                 map_location = new Graphic(pt);
                 map.centerAndZoom(pt, 13);
-                var symbol = new PictureMarkerSymbol("http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/bluedot.png", 20, 20);
+                var symbol = new PictureMarkerSymbol("http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/bluedot.png", 50, 50);
                 map.graphics.add(new Graphic(pt, symbol));
                 console.dir(position);
               }

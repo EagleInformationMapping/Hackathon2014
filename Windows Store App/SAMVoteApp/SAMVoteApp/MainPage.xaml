@@ -1,0 +1,597 @@
+﻿<Page
+    x:Class="SAMVoteApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SAMVoteApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:esri="using:Esri.ArcGISRuntime.Controls"
+    xmlns:layers="using:Esri.ArcGISRuntime.Layers"
+    xmlns:telerik="using:Telerik.UI.Xaml.Controls.Chart"
+    xmlns:telerikGrid="using:Telerik.UI.Xaml.Controls.Grid"
+    xmlns:geometry="using:Esri.ArcGISRuntime.Geometry"
+    >
+    
+    <Hub x:Name="everything">
+        <Hub.HeaderTemplate>
+            <DataTemplate>
+                <StackPanel Orientation="Horizontal" Margin="10,-10,0,-10">
+                    <Image Source="Assets/SmallLogo.scale-100.png" Height="32" Width="32"></Image>
+                    <TextBlock FontSize="30">County of Riverside Voter Information App. Text us @ 832-924-8472</TextBlock>
+                </StackPanel>
+            </DataTemplate>
+       </Hub.HeaderTemplate>
+        <Hub.Background>
+            <ImageBrush ImageSource="Assets/marilyn2.png" Stretch="UniformToFill"></ImageBrush>
+        </Hub.Background>
+        <HubSection >
+            <HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock FontSize="30">Voting Locations Wait Time</TextBlock>
+                </DataTemplate>
+            </HubSection.HeaderTemplate>
+            
+            <DataTemplate>
+                <ScrollViewer HorizontalScrollMode="Disabled" ZoomMode="Disabled">                    
+                    <telerik:RadCartesianChart Width="450" Height="700" x:Name="chart" Loaded="chart_Loaded" MaxWidth="450" >
+                        <telerik:RadCartesianChart.HorizontalAxis>
+                            <telerik:LinearAxis/>
+                        </telerik:RadCartesianChart.HorizontalAxis>
+                        <telerik:RadCartesianChart.VerticalAxis>
+                            <telerik:CategoricalAxis FontSize="14" Foreground="White" Width="15"/>
+                        </telerik:RadCartesianChart.VerticalAxis>
+                        <telerik:RadCartesianChart.Behaviors>
+                            <telerik:ChartSelectionBehavior DataPointSelectionMode="Single" />
+                           
+                        </telerik:RadCartesianChart.Behaviors>
+                        
+                        <telerik:BarSeries ItemsSource="{Binding}"  Height="16">
+                            <telerik:BarSeries.ShowLabels>True</telerik:BarSeries.ShowLabels>
+                            <telerik:BarSeries.AllowSelect>True</telerik:BarSeries.AllowSelect>
+                           
+                            <telerik:BarSeries.LabelDefinitions>
+                                <telerik:ChartSeriesLabelDefinition HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <telerik:ChartSeriesLabelDefinition.Template>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                            <TextBlock Text="{Binding DataItem.WaitTime}" FontSize="14" Foreground="White"/>
+                                                <TextBlock Text="ms." Foreground="White"></TextBlock>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </telerik:ChartSeriesLabelDefinition.Template>
+                                </telerik:ChartSeriesLabelDefinition>
+                            </telerik:BarSeries.LabelDefinitions>
+                           
+                            <telerik:BarSeries.CategoryBinding>
+                                <telerik:PropertyNameDataPointBinding PropertyName="Name"/>
+                            </telerik:BarSeries.CategoryBinding>
+                            <telerik:BarSeries.ValueBinding>
+                                <telerik:PropertyNameDataPointBinding PropertyName="WaitTime"/>
+                            </telerik:BarSeries.ValueBinding>
+                        </telerik:BarSeries>
+                    </telerik:RadCartesianChart>
+                </ScrollViewer>
+            </DataTemplate>
+        </HubSection>
+        <HubSection  Header="Map Information" Margin="0,-10,0,0">
+            <HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock FontSize="30">Map Information</TextBlock>
+                </DataTemplate>
+            </HubSection.HeaderTemplate>
+            <DataTemplate>
+                <StackPanel Margin="5" >
+                    <Grid Background="Brown" Width="800">
+                        <TextBlock Text="Overview Map" Height="30" FontSize="18" Margin="2"></TextBlock>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                            <Button x:Name="m0_sync" Width="30" Height="30" Loaded="btn_sync_loaded">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="Assets/Sync.png"/>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="m0_beam" Width="30" Height="30" Loaded="btn_m0_loaded">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="Assets/Beam.png"/>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="m0_extent" Width="30" Height="30" Loaded="btn_extent_loaded">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="Assets/Extent.png"/>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                    <esri:MapView x:Name="m0" Width="800" Height="720" Loaded="m0m_Loaded">
+                        <esri:Map x:Name="m0m">
+                            <layers:ArcGISTiledMapServiceLayer ID="BaseMap" 
+    ServiceUri="http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"/>
+
+                            <layers:ArcGISDynamicMapServiceLayer ID="Districts"  Opacity="0.25"
+    ServiceUri="http://www.rctlma.org/siteadmin/rest/services/Public/Supervisorial_Districts/MapServer"/>
+
+                            <layers:ArcGISDynamicMapServiceLayer ID="PL" 
+    ServiceUri="http://www.rctlma.org/siteadmin/rest/services/Public/Public_Sites/MapServer"/>
+
+                            <layers:ArcGISDynamicMapServiceLayer ID="VL"
+    ServiceUri="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/arcgis/rest/services/Voting_Locations/MapServer"/>
+                            <layers:GraphicsLayer ID="GL" ></layers:GraphicsLayer>
+                            
+                            <esri:Map.InitialExtent>
+                                <geometry:Envelope XMin="-12979006.5520317" YMin="3988064.57659092"  XMax="-12948079.2642393"  YMax="4015899.13560402"/>
+                            </esri:Map.InitialExtent>
+                        </esri:Map>
+                    </esri:MapView>
+                    <Grid Width="800" Background="DarkKhaki" Height="30">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontSize="16" Foreground="Black" Margin="10,0,0,0">Location: </TextBlock>
+                            <TextBlock FontSize="16" Foreground="Black" FontWeight="Bold" x:Name="idName" Loaded="idName_Loaded" Text="(Click on Map)"></TextBlock>
+                            <TextBlock FontSize="16" Foreground="Black" Margin="10,0,0,0">Address: </TextBlock>
+                            <TextBlock  FontSize="16" Foreground="Black" FontWeight="Bold" x:Name="idAddress" Loaded="idAddress_Loaded"></TextBlock>
+                            <TextBlock FontSize="16" Foreground="Black" Margin="10,0,0,0">Avg. Wait Time: </TextBlock>
+                            <TextBlock  FontSize="16" Foreground="Black" FontWeight="Bold" x:Name="idWait" Loaded="idWait_Loaded"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </DataTemplate>
+        </HubSection>
+        <HubSection Header="Geographic Panels" Margin="0,-10,0,0">
+            <HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock FontSize="30">Geographic Information</TextBlock>
+                </DataTemplate>
+            </HubSection.HeaderTemplate>
+            <DataTemplate>
+                <VariableSizedWrapGrid>
+                    <StackPanel Margin="5" >
+                        <Grid Background="Blue" Width="400">
+                            <TextBlock Text="Weather Radar" Height="30" FontSize="18" Margin="2"></TextBlock>
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                                <Button x:Name="m3_sync" Width="30" Height="30" Loaded="btn_sync_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Sync.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="m3_beam" Width="30" Height="30" Loaded="btn_beam_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Beam.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="m3_extent" Width="30" Height="30" Loaded="btn_extent_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Extent.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                        <esri:MapView x:Name="m3" Width="400" Height="350"  Loaded="m3m_Loaded" >
+                        <esri:Map x:Name="m3m">
+                            <layers:ArcGISTiledMapServiceLayer ID="BaseMap" 
+    ServiceUri="http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"/>
+                            <esri:Map.InitialExtent>
+                                    <geometry:Envelope XMin="-13200343.762204075" YMin="3908072.382163536"  XMax="-12771404.433997044"  YMax="4149919.139657717"/>
+                                </esri:Map.InitialExtent>
+                        </esri:Map>
+                    </esri:MapView>
+                    </StackPanel>
+                    <StackPanel Margin="5" >
+                        <Grid Background="Green" Width="400">
+                            <TextBlock Text="Traffic Information" Height="30" FontSize="18" Margin="2"></TextBlock>
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                                <Button x:Name="m4_sync" Width="30" Height="30" Loaded="btn_sync_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Sync.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="m4_beam" Width="30" Height="30" Loaded="btn_beam_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Beam.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="m4_extent" Width="30" Height="30" Loaded="btn_extent_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Extent.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                        <esri:MapView x:Name="m4" Width="400" Height="350"  Loaded="m4m_Loaded">
+                            <esri:Map x:Name="m4m" >
+                                <layers:ArcGISTiledMapServiceLayer ID="BaseMap" 
+    ServiceUri="http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"/>
+                                <esri:Map.InitialExtent>
+                                    <geometry:Envelope XMin="-13200343.762204075" YMin="3908072.382163536"  XMax="-12771404.433997044"  YMax="4149919.139657717"/>
+                                </esri:Map.InitialExtent>
+                            </esri:Map>
+                        </esri:MapView>
+                    </StackPanel>
+                    <StackPanel Margin="5" >
+                        <Grid Background="DarkCyan" Width="400">
+                            <TextBlock Text="Crime Analysis" Height="30" FontSize="18" Margin="2"></TextBlock>
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                                <Button x:Name="m1_sync" Width="30" Height="30" Loaded="btn_sync_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Sync.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="m1_beam" Width="30" Height="30" Loaded="btn_beam_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Beam.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="m1_extent" Width="30" Height="30" Loaded="btn_extent_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Extent.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                        <esri:MapView x:Name="m1" Width="400" Height="350" Loaded="m1m_Loaded">
+                            <esri:Map x:Name="m1m">
+                                <layers:ArcGISTiledMapServiceLayer ID="BaseMap" 
+    ServiceUri="http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"/>
+
+                                <layers:ArcGISDynamicMapServiceLayer ID="BaseMap" 
+    ServiceUri="http://tmservices1.esri.com/arcgis/rest/services/LiveFeeds/Earthquakes/MapServer"/>
+                                
+                                <esri:Map.InitialExtent>
+                                    <geometry:Envelope XMin="-13200343.762204075" YMin="3908072.382163536"  XMax="-12771404.433997044"  YMax="4149919.139657717"/>
+                                </esri:Map.InitialExtent>
+                            </esri:Map>
+                        </esri:MapView>
+                    </StackPanel>
+                    <StackPanel Margin="5" >
+                        <Grid Background="Purple" Width="400">
+                            <TextBlock Text="Recent Earthquakes" Height="30" FontSize="18" Margin="2"></TextBlock>
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                                <Button x:Name="m2_sync" Width="30" Height="30" Loaded="btn_sync_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Sync.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="m2_beam" Width="30" Height="30" Loaded="btn_beam_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Beam.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="m2_extent" Width="30" Height="30" Loaded="btn_extent_loaded">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="Assets/Extent.png"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+
+                        <esri:MapView x:Name="m2" Width="400" Height="350" Loaded="m2m_Loaded">
+                            <esri:Map x:Name="m2m">
+                                <layers:ArcGISTiledMapServiceLayer ID="BaseMap" 
+    ServiceUri="http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"/>
+                                <esri:Map.InitialExtent>
+                                    <geometry:Envelope XMin="-13200343.762204075" YMin="3908072.382163536"  XMax="-12771404.433997044"  YMax="4149919.139657717"/>
+                                </esri:Map.InitialExtent>
+                            </esri:Map>
+                        </esri:MapView>
+                    </StackPanel>
+                </VariableSizedWrapGrid>
+            </DataTemplate>
+        </HubSection>
+        <HubSection Header="Live User Feeds" Margin="0,-10,0,0">
+            <HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock FontSize="30">Live User Feeds</TextBlock>
+                </DataTemplate>
+            </HubSection.HeaderTemplate>
+            <DataTemplate>
+                <VariableSizedWrapGrid>
+                    <StackPanel Margin="5" >
+                        <Grid Background="Orange" Width="400">
+                            
+                            <TextBlock Text="Text SMS Feed" Height="30" FontSize="18" Margin="2"></TextBlock>
+                            <Image Source="Assets/twilio.png" Height="30" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0"></Image>
+                        </Grid>                        
+                        <telerikGrid:RadDataGrid x:Name="gFeed" Height="350" Width="400" Loaded="Txt_Loaded"  AutoGenerateColumns="False" UserGroupMode="Disabled"   >
+                            <telerikGrid:RadDataGrid.Columns>
+                                <telerikGrid:DataGridTemplateColumn Header="Messages">
+                                    <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Message}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                        </DataTemplate>
+                                    </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                </telerikGrid:DataGridTemplateColumn>
+                            </telerikGrid:RadDataGrid.Columns>
+                        </telerikGrid:RadDataGrid>
+                    </StackPanel>
+                    <StackPanel Margin="5" >
+                        <Grid Background="Azure" Width="400">
+                            <TextBlock Text="Social Media Feed for District 1" Foreground="Gray" Height="30" FontSize="18" Margin="2"></TextBlock>
+                        </Grid>
+                        <telerikGrid:RadDataGrid x:Name="D31863" Height="350" Width="400" Loaded="GF1_Loaded"  AutoGenerateColumns="False" UserGroupMode="Disabled" >
+                            <telerikGrid:RadDataGrid.Columns>
+
+                                <telerikGrid:DataGridTemplateColumn Header=" ">
+                                    <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Image Source="{Binding Source}" Stretch="UniformToFill" Width="16" Height="16" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                </telerikGrid:DataGridTemplateColumn>
+                                <telerikGrid:DataGridTemplateColumn Header="Message">
+                                    <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Title}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                        </DataTemplate>
+                                    </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                </telerikGrid:DataGridTemplateColumn>
+                            </telerikGrid:RadDataGrid.Columns>
+                        </telerikGrid:RadDataGrid>
+                    </StackPanel>
+                    <StackPanel Margin="5" >
+                        <Grid Background="Azure" Width="400">
+                            <TextBlock Text="Social Media Feed for District 2" Foreground="Gray" Height="30" FontSize="18" Margin="2"></TextBlock>
+                            <Image Source="Assets/geofeedia.png" Height="30" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,3,0"></Image>
+                        </Grid>
+
+                        <telerikGrid:RadDataGrid x:Name="D31861" Height="350" Width="400" Loaded="GF1_Loaded"  AutoGenerateColumns="False" UserGroupMode="Disabled"  >
+                            <telerikGrid:RadDataGrid.Columns>
+
+                                <telerikGrid:DataGridTemplateColumn Header=" ">
+                                    <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Image Source="{Binding Source}" Stretch="UniformToFill" Width="16" Height="16" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                </telerikGrid:DataGridTemplateColumn>
+                                <telerikGrid:DataGridTemplateColumn Header="Message">
+                                    <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Title}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                        </DataTemplate>
+                                    </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                </telerikGrid:DataGridTemplateColumn>
+                            </telerikGrid:RadDataGrid.Columns>
+                        </telerikGrid:RadDataGrid>
+                    </StackPanel>
+                    <StackPanel Margin="5" >
+                        <Grid Background="Azure" Width="400">
+                            <TextBlock Text="Social Media Feed for District 3" Foreground="Gray" Height="30" FontSize="18" Margin="2"></TextBlock>
+                        </Grid>
+                        <telerikGrid:RadDataGrid x:Name="D31866" Height="350" Width="400" Loaded="GF1_Loaded"  AutoGenerateColumns="False" UserGroupMode="Disabled"  >
+                        <telerikGrid:RadDataGrid.Columns>
+
+                            <telerikGrid:DataGridTemplateColumn Header=" ">
+                                <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Image Source="{Binding Source}" Stretch="UniformToFill" Width="16" Height="16" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                            </telerikGrid:DataGridTemplateColumn>
+                            <telerikGrid:DataGridTemplateColumn Header="Message">
+                                <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    </DataTemplate>
+                                </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                            </telerikGrid:DataGridTemplateColumn>
+                        </telerikGrid:RadDataGrid.Columns>
+                    </telerikGrid:RadDataGrid>
+                    </StackPanel>
+                    <StackPanel Margin="5" >
+                        <Grid Background="Azure" Width="400">
+                            <TextBlock Text="Social Media Feed for District 4" Foreground="Gray" Height="30" FontSize="18" Margin="2"></TextBlock>
+                        </Grid>
+
+                        <telerikGrid:RadDataGrid x:Name="D31869" Height="350" Width="400" Loaded="GF1_Loaded"  AutoGenerateColumns="False" UserGroupMode="Disabled"   >
+                        <telerikGrid:RadDataGrid.Columns>
+
+                            <telerikGrid:DataGridTemplateColumn Header=" ">
+                                <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Image Source="{Binding Source}" Stretch="UniformToFill" Width="16" Height="16" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                            </telerikGrid:DataGridTemplateColumn>
+                            <telerikGrid:DataGridTemplateColumn Header="Message">
+                                <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    </DataTemplate>
+                                </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                            </telerikGrid:DataGridTemplateColumn>
+                        </telerikGrid:RadDataGrid.Columns>
+                    </telerikGrid:RadDataGrid>
+                    </StackPanel>
+                    <StackPanel Margin="5" >
+                        <Grid Background="Azure" Width="400">
+                            <TextBlock Text="Social Media Feed for District 5" Foreground="Gray" Height="30" FontSize="18" Margin="2"></TextBlock>
+                        </Grid>
+
+                        <telerikGrid:RadDataGrid x:Name="D31864" Height="350" Width="400" Loaded="GF1_Loaded"  AutoGenerateColumns="False" UserGroupMode="Disabled"   >
+                            <telerikGrid:RadDataGrid.Columns>
+
+                                <telerikGrid:DataGridTemplateColumn Header=" ">
+                                    <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Image Source="{Binding Source}" Stretch="UniformToFill" Width="16" Height="16" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                </telerikGrid:DataGridTemplateColumn>
+                                <telerikGrid:DataGridTemplateColumn Header="Message">
+                                    <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Title}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                        </DataTemplate>
+                                    </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                                </telerikGrid:DataGridTemplateColumn>
+                            </telerikGrid:RadDataGrid.Columns>
+                        </telerikGrid:RadDataGrid>
+                    </StackPanel>
+
+                </VariableSizedWrapGrid>
+            </DataTemplate>
+        </HubSection>
+        <HubSection Header="Candidate Profiles" Margin="0,-10,0,0">
+            <HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock FontSize="30">Candidate Profiles</TextBlock>
+                </DataTemplate>
+            </HubSection.HeaderTemplate>
+            <DataTemplate>
+            <VariableSizedWrapGrid >
+                    <Grid Width="600" Margin="10,0,0,0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto">                                
+                            </RowDefinition>
+                            <RowDefinition Height="400"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Assets/jack.png" Stretch="Uniform" Width="250" Height="300" ></Image>
+                        <StackPanel Grid.Column="1" Margin="10,0,0,0">    
+                            <TextBlock Text="Name" FontSize="20"/>
+                            <TextBlock Text="Jack Dangermond" FontSize="24" FontWeight="Bold" Foreground="AliceBlue"/>
+                            <TextBlock Text="Age" FontSize="20"/>
+                            <TextBlock Text="45" FontSize="24" FontWeight="Bold" Foreground="AliceBlue"/>
+                            <TextBlock Text="Party" FontSize="20"/>
+                            <TextBlock Text="GIS Party" FontSize="24" FontWeight="Bold" Foreground="AliceBlue"/>
+                        </StackPanel>
+                        <Grid  Grid.ColumnSpan="2" Grid.Row="1" Opacity="0.5" Background="White" >
+                        <RichTextBlock FontSize="20" Foreground="Black" FontWeight="Bold" TextWrapping="Wrap" Margin="10" >
+                                <Paragraph>
+                                Jack Dangermond is an American business executive and environmental scientist. 
+                                    In 1969, he co-founded with his wife Laura the Environmental Systems Research Institute (Esri).
+                                    Dangermond is the company's President and Founder, and he works out of Esri's headquarters in Redlands, California. 
+                                    Dangermond founded Esri to perform land use analysis; however, its focus evolved into GIS software development, 
+                                    highlighted by the release of ARC/INFO in the early 1980s; 
+                                    the development and marketing of ARC/INFO positioned Esri with the dominant market share among GIS software developers. Today Esri is the largest GIS software developer in the world and its flagship product, ArcGIS, traces its heritage to Dangermond's initial efforts in developing ARC/INFO.
+                            </Paragraph>
+                        </RichTextBlock>
+                        </Grid>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
+                            <Image Source="Assets/social/facebook.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/linkedin.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/google plus.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/instagram.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/twitter.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/youtube.png" Margin="5" Width="24"></Image>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Width="600" Margin="10,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto">
+                            </RowDefinition>
+                            <RowDefinition Height="400"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Assets/scott.png" Stretch="Uniform" Width="250" Height="300"></Image>
+                        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                            <TextBlock Text="Name" FontSize="20"/>
+                            <TextBlock Text="Scott Morehouse" FontSize="24" FontWeight="Bold" Foreground="AliceBlue"/>
+                            <TextBlock Text="Age" FontSize="20"/>
+                            <TextBlock Text="27" FontSize="24" FontWeight="Bold" Foreground="AliceBlue"/>
+                            <TextBlock Text="Party" FontSize="20"/>
+                            <TextBlock Text="World Wide Web Party" FontSize="24" FontWeight="Bold" Foreground="AliceBlue"/>
+                        </StackPanel>
+                        <Grid  Grid.ColumnSpan="2" Grid.Row="1" Opacity="0.5" Background="White" >
+                            <RichTextBlock FontSize="20" Foreground="Black" FontWeight="Bold" TextWrapping="Wrap" Margin="10" >
+                                <Paragraph>
+                                    Scott Morehouse was involved in the early development of GIS in the Harvard Graphics Lab and is now director of software development for Esri. He was responsible for the initial design and architecture of Esri's ARC product.</Paragraph>
+                            </RichTextBlock>
+                        </Grid>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
+                            <Image Source="Assets/social/facebook.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/linkedin.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/google plus.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/instagram.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/twitter.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/youtube.png" Margin="5" Width="24"></Image>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Width="600" Margin="10,0,0,0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto">
+                            </RowDefinition>
+                            <RowDefinition Height="400"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Assets/john.png" Stretch="Uniform" Width="250" ></Image>
+                        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                            <TextBlock Text="Name" FontSize="20"/>
+                            <TextBlock Text="John Yaist" FontSize="24" FontWeight="Bold" Foreground="AliceBlue"/>
+                            <TextBlock Text="Age" FontSize="20"/>
+                            <TextBlock Text="57" FontSize="24" FontWeight="Bold" Foreground="AliceBlue"/>
+                            <TextBlock Text="Party" FontSize="20"/>
+                            <TextBlock Text="Hack Party" FontSize="24" FontWeight="Bold" Foreground="AliceBlue"/>
+                        </StackPanel>
+                        <Grid  Grid.ColumnSpan="2" Grid.Row="1" Opacity="0.5" Background="White" >
+                            <RichTextBlock FontSize="20" Foreground="Black" FontWeight="Bold" TextWrapping="Wrap" Margin="10" >
+                                <Paragraph>
+                                    Map Geek through and through, recalling the Inner Nerd with a story of asking for the Ohio Almanac on his 10th birthday. Troubleshooter of geographic databases for years, recently entered into the world of web services and Python programming and has taken to coordinating Hackathon presence with Esri. Originally from The Midwest, currently lives in Palm Springs, California, which means he now regards anything below 90 degrees as jacket weather.
+                                </Paragraph>
+                            </RichTextBlock>
+                        </Grid>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
+                            <Image Source="Assets/social/facebook.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/linkedin.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/google plus.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/instagram.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/twitter.png" Margin="5" Width="24"></Image>
+                            <Image Source="Assets/social/youtube.png" Margin="5" Width="24"></Image>
+                        </StackPanel>
+                    </Grid>
+                </VariableSizedWrapGrid>
+            </DataTemplate>
+        </HubSection>
+    </Hub>
+</Page>
+

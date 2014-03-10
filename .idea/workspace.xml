@@ -51,6 +51,7 @@
             <state line="77" column="4" selection-start="2842" selection-end="2842" vertical-scroll-proportion="0.0" vertical-offset="954" max-vertical-offset="1740">
               <folding>
                 <element signature="e#26#62#0" expanded="true" />
+                <marker date="1394463782000" expanded="true" signature="2423:3390" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -59,7 +60,7 @@
       <file leaf-file-name="mobile_app.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/templates/mobile_app.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="291" column="50" selection-start="13746" selection-end="13746" vertical-scroll-proportion="0.37815127" vertical-offset="4230" max-vertical-offset="5970">
+            <state line="316" column="145" selection-start="14845" selection-end="14845" vertical-scroll-proportion="0.37650603" vertical-offset="4615" max-vertical-offset="6045">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -534,7 +535,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -545,7 +546,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39898133" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32371795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32371795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -591,6 +592,7 @@
         <state line="66" column="40" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1545">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
+            <marker date="1394463782000" expanded="true" signature="2423:3390" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -619,6 +621,7 @@
         <state line="38" column="0" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1683">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
+            <marker date="1394463782000" expanded="true" signature="2423:3390" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -647,6 +650,7 @@
         <state line="8" column="45" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1683">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
+            <marker date="1394463782000" expanded="true" signature="2423:3390" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -677,13 +681,14 @@
         <state line="77" column="4" selection-start="2842" selection-end="2842" vertical-scroll-proportion="0.0" vertical-offset="954" max-vertical-offset="1740">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
+            <marker date="1394463782000" expanded="true" signature="2423:3390" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/templates/mobile_app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="50" selection-start="13746" selection-end="13746" vertical-scroll-proportion="0.37815127" vertical-offset="4230" max-vertical-offset="5970">
+        <state line="316" column="145" selection-start="14845" selection-end="14845" vertical-scroll-proportion="0.37650603" vertical-offset="4615" max-vertical-offset="6045">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
