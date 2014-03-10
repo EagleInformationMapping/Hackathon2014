@@ -5,6 +5,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="static/images/SAM-76x76.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="static/images/SAM-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="static/images/SAM-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="static/images/SAM-152x152.png">
     <title>SAM Votes!</title>
     <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css">
 {#    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css">#}
@@ -49,16 +53,17 @@
             "esri/layers/ArcGISDynamicMapServiceLayer", "esri/geometry/Extent", "esri/geometry/Point",
             "esri/layers/FeatureLayer", "dojo/dom", "dojo/dom-construct", "esri/dijit/PopupMobile",
             "esri/InfoTemplate", "dojo/query", "esri/symbols/PictureMarkerSymbol", "esri/graphic",
-            "esri/tasks/ClosestFacilityTask", "esri/tasks/ClosestFacilityParameters", "esri/tasks/FeatureSet",
+            "esri/tasks/RouteTask", "esri/tasks/RouteParameters", "esri/tasks/FeatureSet",
             "esri/urlUtils", "esri/layers/GraphicsLayer", "esri/renderers/SimpleRenderer",
             "esri/symbols/SimpleLineSymbol", "dojo/_base/array", "dojo/_base/Color",
-            "dojo/io-query",
+            "dojo/io-query", "esri/tasks/BufferParameters", "esri/tasks/GeometryService",
+            "esri/SpatialReference", "dojo/_base/fx", "dojo/request/xhr",
             "dojox/mobile/ToolBarButton", "dojox/mobile/View", "dojox/mobile/ContentPane"
         ], function(Map, mobile, parser, has, dTheme, dom, registry, on,
                     ArcGISDynamicMapServiceLayer, Extent, Point, FeatureLayer, dom, domConstruct,
-                    PopupMobile, InfoTemplate, query, PictureMarkerSymbol, Graphic, ClosestFacilityTask,
-                    ClosestFacilityParameters, FeatureSet, urlUtils, GraphicsLayer, SimpleRenderer, SimpleLineSymbol,
-                    array, Color, ioQuery) {
+                    PopupMobile, InfoTemplate, query, PictureMarkerSymbol, Graphic, RouteTask,
+                    RouteParameters, FeatureSet, urlUtils, GraphicsLayer, SimpleRenderer, SimpleLineSymbol,
+                    array, Color, ioQuery, BufferParameters, GeometryService, SpatialReference, fx, xhr) {
             parser.parse();
             mobile.hideAddressBar();
 
@@ -104,7 +109,7 @@
                 var polling_layer_options = {
                                                 refreshInterval:1,
                                                 infoTemplate: polling_info_template,
-                                                outFields:["Location_Name", "Wait_Time"]
+                                                outFields:["Location_Name", "Wait_Time", "OBJECTID", "Address"]
                                             };
                 pollingplaces_layer = new FeatureLayer("http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/arcgis/rest/services/Voting_Locations/FeatureServer/0", polling_layer_options);
                 map.addLayer(pollingplaces_layer);
@@ -120,6 +125,12 @@
                 routeGraphicLayer.setRenderer(routeRenderer);
 
                 map.addLayer(routeGraphicLayer);
+
+                resize_map();
+
+                fx.fadeOut({
+                    node: dom.byId("splash")
+                }).play();
             }
 
             function get_location(position)
@@ -128,9 +139,10 @@
                 on(vote_button, "click", vote_button_action);
 
                 zoomToLocation(position);
+                domConstruct.destroy("splash");
             }
 
-            function vote_button_action(evt)
+            function send_text(message)
             {
                 var uri = window.location.search;
                 var query = uri.substring(uri.indexOf("?") + 1, uri.length);
@@ -138,39 +150,120 @@
                 console.log(queryObject);
                 if (queryObject.p)
                 {
+                    var new_query = {
+                        n:queryObject.p,
+                        b:message
+                    };
                     console.log("call the text message app!");
+                    xhr("/send_text?" + ioQuery.objectToQuery(new_query));
                 }
+            }
+
+            function vote_button_action(evt)
+            {
 
 
-                var params = new ClosestFacilityParameters();
+                var bParams = new BufferParameters();
+                //bParams.bufferSpatialReference = new SpatialReference(32612);
+                bParams.bufferSpatialReference = map.spatialReference;
+                bParams.distances = [1.5];
+                //bParams.outSpatialReference = new SpatialReference(32612);
+                bParams.outSpatialReference = map.spatialReference;
+                bParams.geometries = [map_location.geometry];
+                bParams.unit = GeometryService.UNIT_STATUTE_MILE;
+                console.log(bParams);
+
+                var bufferService = new GeometryService("/proxy_gp");
+                bufferService.buffer(bParams, function(result) {
+                    console.log("pass");
+                    console.log(result);
+                    var geoms = [];
+                    array.forEach(pollingplaces_layer.graphics, function(item, index) {
+                        geoms.push(item.geometry);
+                    });
+                    bufferService.intersect(
+                            geoms,
+                            result[0],
+                            function(int_results) {
+                                var points_that_match = [];
+                                console.log("int pass");
+                                console.log(int_results);
+                                array.forEach(int_results, function(int_item, index) {
+
+                                   array.forEach(pollingplaces_layer.graphics, function(pp_item, pp_i) {
+                                       if (Math.round(int_item.x) == Math.round(pp_item.geometry.x) && Math.round(int_item.y) == Math.round(pp_item.geometry.y)) {
+                                           points_that_match.push(pp_item);
+                                           console.log("here");
+                                       }
+                                   }) ;
+                                });
+                                console.log("matched points");
+                                console.log(points_that_match);
+
+                                var curr_wait_time = 200;
+                                var curr_polling_location;
+                                var curr_polling_attributes;
+                                array.forEach(points_that_match, function(item, i) {
+                                   if (item.attributes['Wait_Time'] < curr_wait_time) {
+                                       curr_wait_time = item.attributes['Wait_Time']
+
+                                       curr_polling_location = points_that_match[i];
+                                       curr_polling_attributes = item.attributes;
+                                       console.log(curr_polling_attributes);
+                                   }
+                                });
+                                send_text("Your nearest polling location: "+curr_polling_attributes['Address']);
+                                curr_polling_attributes["Wait_Time"] += 5;
+                                var tmp_graph = new Graphic(curr_polling_location);
+                                tmp_graph.attributes = curr_polling_attributes;
+                                console.log("updating feature");
+                                console.log(tmp_graph);
+{#                                pollingplaces_layer.applyEdits(null, [tmp_graph], null, function(results) {#}
+{#                                    console.log("edits done");#}
+{#                                    console.log(results);#}
+{#                                }, function(errors) {#}
+{#                                    console.log("edits error");#}
+{#                                    console.log(errirs);#}
+{#                                });#}
+                                console.log("polling location");
+                                console.log(curr_polling_location);
+                                route_to_location(curr_polling_location);
+
+                            }, function(int_error) {
+                                console.log("int error");
+                                console.log(int_error);
+                            }
+                    );
+                }, function(err) {
+                    console.log("error");
+                    console.log(err);
+                });
+            }
+
+            function route_to_location(location)
+            {
+
+
+
+                var params = new RouteParameters();
                 params.impedenceAttribute= "Miles";
                 params.defaultCutoff= 3.0;
                 params.returnIncidents=false;
                 params.returnRoutes=true;
                 params.returnDirections=true;
-                params.defaultTargetFacilityCount = 1;
+                params.defaultTargetFacilityCount = 5;
                 params.returnFacilities=false;
 
 
-                var facilities = new FeatureSet();
-                facilities.features = pollingplaces_layer.graphics;
-                array.forEach(facilities.features, function(g, i) {
-                    g.attributes['Attr_Time'] = g.attributes['Wait_Time'];
-                });
+                var stops = new FeatureSet();
+                location.attributes = {};
+                stops.features = [map_location, location];
+                params.stops = stops;
 
-                console.log(facilities.features);
-
-                var features = [];
-                features.push(map_location);
-                var incidents = new FeatureSet();
-                incidents.features = features;
-                params.incidents = incidents;
-
-                params.facilities = facilities;
                 params.outSpatialReference = map.spatialReference;
 
                 //var closestFacilityTask = new ClosestFacilityTask("http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World");
-                var closestFacilityTask = new ClosestFacilityTask("/proxy");
+                var closestFacilityTask = new RouteTask("/proxy");
                 //var closestFacilityTask = new ClosestFacilityTask("http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Network/USA/NAServer/Closest Facility");
 
 
@@ -178,25 +271,25 @@
                 closestFacilityTask.solve(params, function(solveResult) {
                     console.log("pass");
                     console.log(solveResult);
-                    console.log(solveResult.directions);
+                    console.log(solveResult.routeResults);
 
 
 
-                    array.forEach(solveResult.routes, function(route, index){
+                    array.forEach(solveResult.routeResults, function(route, index){
                         //build an array of route info
-                        var attr = array.map(solveResult.directions[index].features, function(feature){
-                          return feature.attributes.text;
-                        });
+{#                        var attr = array.map(solveResult.directions[index].features, function(feature){#}
+{#                          return feature.attributes.text;#}
+{#                        });#}
 
-                        drive_times.push(solveResult.directions[index].totalDriveTime);
-                        map.setExtent(solveResult.directions[index].extent, true);
+{#                        drive_times.push(solveResult.directions[index].totalDriveTime);#}
+{#                        map.setExtent(solveResult.directions[index].extent, true);#}
                         //var infoTemplate = new InfoTemplate("Attributes", "${*}");
 
                         //route.setInfoTemplate(infoTemplate);
-                        route.setAttributes(attr);
+                        //route.setAttributes(attr);
                         console.log(route);
 
-                        routeGraphicLayer.add(route);
+                        routeGraphicLayer.add(route.route);
                         //dom.byId("directionsDiv").innerHTML = "Hover over the route to view directions";
                       });
 
@@ -215,7 +308,7 @@
                 var pt = esri.geometry.geographicToWebMercator(new Point(position.coords.longitude, position.coords.latitude));
                 map_location = new Graphic(pt);
                 map.centerAndZoom(pt, 13);
-                var symbol = new PictureMarkerSymbol("static/images/bluedot.png", 40, 40);
+                var symbol = new PictureMarkerSymbol("static/images/bluedot.png", 20, 20);
                 map.graphics.add(new Graphic(pt, symbol));
                 console.dir(position);
               }
@@ -268,7 +361,7 @@
     <div id="mapView" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
       <div id="header" data-dojo-type="dojox.mobile.Heading">
         <div id="sameVotesButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;">SAM Votes!</div>
-        <div id="aboutButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" moveTo="aboutView">About</div>
+{#        <div id="aboutButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" moveTo="aboutView">About</div>#}
       </div>
       <div id="mapContainer" data-dojo-type="dojox.mobile.ContentPane">
         <div id="map"></div>
@@ -286,6 +379,12 @@
       eruditionem commodo eram consequat. Esse cupidatat te culpa nisi. Vidisse lorem
       minim ab nulla.
       </p>
+    </div>
+
+    <div id="splash" style="z-index: 100; width: 100%; position: absolute; top: 0px; height: 100%; left: 0px;">
+        <div align="center">
+            <img src="static/images/splashscreen.png" />
+        </div>
     </div>
 
 

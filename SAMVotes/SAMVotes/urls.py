@@ -9,6 +9,7 @@ from vote_app.views import send_text
 
 from vote_app.views import MobileApp
 from vote_app.views import proxy_view
+from vote_app.views import proxy_view_gp
 
 urlpatterns = patterns('',
     # Examples:
@@ -33,4 +34,5 @@ urlpatterns = patterns('',
     url(r'^jamie', jamie_view),
     url(r'^send_text', send_text),
     url(r'^proxy/(?P<path>.*)', proxy_view),
+    url(r'^proxy_gp/(?P<path>.*)', proxy_view_gp),
 )
