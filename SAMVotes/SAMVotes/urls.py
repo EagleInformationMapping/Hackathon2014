@@ -26,5 +26,5 @@ urlpatterns = patterns('',
     # ...
 
     url(r'^$', MobileApp.as_view()),
-    url(r'^sms/', reply_to_sms_messages),
+    url(r'^sms', reply_to_sms_messages),
 )
