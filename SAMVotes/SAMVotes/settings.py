@@ -11,8 +11,8 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'db.sqlite',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -20,6 +20,20 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default.
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'hackathon2014',
+#         'USER': '',
+#         'PASSWORD': '',
+#         'HOST': 'localhost\\gn',
+#         'PORT': '',
+#         'OPTIONS': {
+#             'driver': 'SQL Server Native Client 11.0',
+#         }
+#     }
+# }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -124,6 +138,10 @@ INSTALLED_APPS = (
     'vote_app',
     'django_twilio',
 )
+
+TWILIO_ACCOUNT_SID = 'AC74f157e03d4c6762554264b24d696d0f'
+TWILIO_AUTH_TOKEN = 'c5573aee5281b22c682fccfe41a8baa8'
+TWILIO_DEFAULT_CALLERID = '8329248472'
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
