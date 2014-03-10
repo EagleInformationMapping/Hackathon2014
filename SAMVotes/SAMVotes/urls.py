@@ -17,8 +17,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^', MobileApp.as_view()),
     url(r'^hello_world/$', 'django_twilio.views.say', {
         'text': 'Hello, world!'
     }),
+    url(r'^', MobileApp.as_view()),
 )
