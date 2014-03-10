@@ -22,9 +22,9 @@ urlpatterns = patterns('',
         'text': 'Hello, world!'
     }),
 
-    url(regex=r'^sms/$',
-        view=reply_to_sms_messages,
-        name='sms'),
+    url(r'^sms/$', reply_to_sms_messages, {
+        'text': 'Hello, world!'
+    }),
 
     url(r'^', MobileApp.as_view()),
 )

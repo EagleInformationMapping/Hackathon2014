@@ -55,7 +55,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="20" selection-start="765" selection-end="765" vertical-scroll-proportion="0.730659" vertical-offset="153" max-vertical-offset="612">
+            <state line="25" column="31" selection-start="820" selection-end="820" vertical-scroll-proportion="0.63323784" vertical-offset="204" max-vertical-offset="612">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -614,7 +614,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="20" selection-start="765" selection-end="765" vertical-scroll-proportion="0.730659" vertical-offset="153" max-vertical-offset="612">
+        <state line="25" column="31" selection-start="820" selection-end="820" vertical-scroll-proportion="0.63323784" vertical-offset="204" max-vertical-offset="612">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
