@@ -11,10 +11,10 @@ def reply_to_sms_messages(request):
     # t = TextPhone()
     # t.run('what up!!!')
     # r = '<Response><Sms>Thanks for the SMS message!</Sms></Response>'
-    l = list()
-    for i in request.GET.keys():
-        l.append(i)
-        l.append(request.GET.get(i))
-
+    # l = list()
+    # for i in request.GET.keys():
+    #     l.append(i)
+    #     l.append(request.GET.get(i))
+    l = request.GET.get('From')
     r = HttpResponse('<Response><Sms>Your phone number is {}</Sms></Response>'.format(l), 'text/XML')
     return r
