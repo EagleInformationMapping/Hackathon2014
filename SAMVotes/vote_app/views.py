@@ -1,6 +1,8 @@
 # Create your views here.
 from django.http import HttpResponse
+from django.conf import settings
 from django.views.generic import TemplateView
+from twilio.rest import TwilioRestClient
 from models import User
 import json
 import datetime
@@ -37,3 +39,19 @@ def jamie_view(request):
         temp['number'] = i.number
         j_list.append(temp)
     return HttpResponse(json.dumps(j_list), 'application/JSON')
+
+def send_text(request):
+    number = request.GET.get('n', None)
+    if number is None:
+        return HttpResponse('')
+
+    account_sid = settings.TWILIO_ACCOUNT_SID
+    auth_token = settings.TWILIO_AUTH_TOKEN
+    client = TwilioRestClient(account_sid, auth_token)
+
+    message = client.messages.create(to=number, from_="+18329248472",
+                                     body="Thanks! Check out your nearest "
+                                          "polling location! "
+                                          "{}".format('http://hackathon2014.azurewebsites.net/'
+                                                      '?p={}'.format(number)))
+    return HttpResponse('')

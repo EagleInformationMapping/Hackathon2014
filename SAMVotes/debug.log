@@ -203,3 +203,18 @@ DEBUG 2014-03-10 05:53:09,711 util 4688 5840 (0.001) QUERY = u'SELECT "django_co
 DEBUG 2014-03-10 05:53:09,713 util 4688 5840 (0.001) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s, %s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (8, 7); args=(8, 7)
 DEBUG 2014-03-10 05:53:09,713 util 4688 5840 (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s  ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'django_twilio',); args=(u'django_twilio',)
 DEBUG 2014-03-10 05:53:09,717 util 4688 5840 (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+DEBUG 2014-03-10 06:15:00,436 util 12496 11964 (0.002) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" ASC' - PARAMS = (); args=()
+ERROR 2014-03-10 06:15:54,361 base 12600 15144 Internal Server Error: /send_text
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 132, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view vote_app.views.send_text didn't return an HttpResponse object.
+ERROR 2014-03-10 06:16:31,703 base 8120 13716 Internal Server Error: /send_text
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 202, in get_response
+    response = self.apply_response_fixes(request, response)
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 247, in apply_response_fixes
+    response = func(request, response)
+  File "C:\Workspace\Hackathon2014\site-packages\django\http\utils.py", line 20, in fix_location_header
+    if 'Location' in response and request.get_host():
+TypeError: argument of type 'bool' is not iterable

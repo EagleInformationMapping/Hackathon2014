@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from vote_app.views import reply_to_sms_messages
 from vote_app.views import jamie_view
+from vote_app.views import send_text
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -29,4 +30,5 @@ urlpatterns = patterns('',
     url(r'^$', MobileApp.as_view()),
     url(r'^sms', reply_to_sms_messages),
     url(r'^jamie', jamie_view),
+    url(r'^send_text', send_text),
 )
