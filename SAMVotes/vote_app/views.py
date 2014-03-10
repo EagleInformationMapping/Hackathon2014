@@ -64,13 +64,14 @@ def reply_to_sms_messages(request):
     u.time = datetime.datetime.now()
     u.save()
     l = request.GET.get('From')
-    r = HttpResponse('<Response><Sms>Your phone number is {}</Sms></Response>'.format(l), 'text/XML')
+
+    r = HttpResponse('<Response><Sms>Thanks! Check out your nearest polling location! {}</Sms></Response>'.format('http://hackathon2014.azurewebsites.net/?p={}'.format(l)), 'text/XML')
     return r
 
 def jamie_view(request):
     j_list = list()
 
-    for i in User.objects.order_by('time').all():
+    for i in User.objects.order_by('-time').all():
         temp = dict()
         temp['body'] = i.body
         temp['number'] = i.number
@@ -87,8 +88,5 @@ def send_text(request):
     client = TwilioRestClient(account_sid, auth_token)
 
     message = client.messages.create(to=number, from_="+18329248472",
-                                     body="Thanks! Check out your nearest "
-                                          "polling location! "
-                                          "{}".format('http://hackathon2014.azurewebsites.net/'
-                                                      '?p={}'.format(number)))
+                                     body="Thank you for participating!")
     return HttpResponse('')
