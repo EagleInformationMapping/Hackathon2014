@@ -9,6 +9,7 @@ class MobileApp(TemplateView):
 
 @twilio_view
 def reply_to_sms_messages(request):
-    r = Response()
-    r.sms('Thanks for the SMS message!')
+    # r = Response()
+    # r.sms('Thanks for the SMS message!')
+    r = '<Response><Sms>Thanks for the SMS message!</Sms></Response>'
     return r
