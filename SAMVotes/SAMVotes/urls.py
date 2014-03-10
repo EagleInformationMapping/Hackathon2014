@@ -20,13 +20,14 @@ urlpatterns = patterns('',
 
 
     # ...
-    url(r'^sms/$', 'django_twilio.views.sms', {
-        'message': 'Thanks for the SMS. Talk to you soon!',
-    }),
+    # url(r'^sms/$', 'django_twilio.views.sms', {
+    #     'message': 'Thanks for the SMS. Talk to you soon!',
+    # }),
     # ...
 
 
-    # url(r'^sms/$', reply_to_sms_messages, {
+    url(r'^sms/$', reply_to_sms_messages.as_view()),
+    # , {
     #     'text': 'Hello, world!'
     # }),
 
