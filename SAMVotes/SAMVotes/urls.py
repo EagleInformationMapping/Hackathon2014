@@ -26,10 +26,7 @@ urlpatterns = patterns('',
     # ...
 
 
-    url(r'^sms/$', reply_to_sms_messages),
-    # , {
-    #     'text': 'Hello, world!'
-    # }),
+    url(r'^sms/$', 'reply_to_sms_messages'),
 
     url(r'^', MobileApp.as_view()),
 )
