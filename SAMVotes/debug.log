@@ -218,3 +218,5 @@ Traceback (most recent call last):
   File "C:\Workspace\Hackathon2014\site-packages\django\http\utils.py", line 20, in fix_location_header
     if 'Location' in response and request.get_host():
 TypeError: argument of type 'bool' is not iterable
+WARNING 2014-03-10 06:26:28,721 base 6298 4420726784 Not Found: /proxy/solveClosestFacility
+WARNING 2014-03-10 06:26:48,792 base 6298 4420726784 Not Found: /proxy/solveClosestFacility

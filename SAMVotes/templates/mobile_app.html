@@ -30,29 +30,56 @@
 
     </style>
 
-    <script>var dojoConfig = { mblAlwaysHideAddressBar: true };</script>
+    <script>var dojoConfig = {
+        mblAlwaysHideAddressBar: true
+    };</script>
     <script src="http://js.arcgis.com/3.8compact"></script>
     <script>
         var map;
+        var pollingplaces_layer;
+        var token = "{{ token }}";
+        var map_location;
+        var routeGraphicLayer;
+        var drive_times = [];
+        var max_drive_time = 0;
+        //var closestFacilityTask;
         require([
             "esri/map", "dojox/mobile", "dojox/mobile/parser", "esri/sniff",
             "dojox/mobile/deviceTheme", "dojo/dom", "dijit/registry", "dojo/on",
             "esri/layers/ArcGISDynamicMapServiceLayer", "esri/geometry/Extent", "esri/geometry/Point",
+            "esri/layers/FeatureLayer", "dojo/dom", "dojo/dom-construct", "esri/dijit/PopupMobile",
+            "esri/InfoTemplate", "dojo/query", "esri/symbols/PictureMarkerSymbol", "esri/graphic",
+            "esri/tasks/ClosestFacilityTask", "esri/tasks/ClosestFacilityParameters", "esri/tasks/FeatureSet",
+            "esri/urlUtils", "esri/layers/GraphicsLayer", "esri/renderers/SimpleRenderer",
+            "esri/symbols/SimpleLineSymbol", "dojo/_base/array", "dojo/_base/Color",
+            "dojo/io-query",
             "dojox/mobile/ToolBarButton", "dojox/mobile/View", "dojox/mobile/ContentPane"
-        ], function(Map, mobile, parser, has, dTheme, dom, registry, on, ArcGISDynamicMapServiceLayer, Extent, Point) {
+        ], function(Map, mobile, parser, has, dTheme, dom, registry, on,
+                    ArcGISDynamicMapServiceLayer, Extent, Point, FeatureLayer, dom, domConstruct,
+                    PopupMobile, InfoTemplate, query, PictureMarkerSymbol, Graphic, ClosestFacilityTask,
+                    ClosestFacilityParameters, FeatureSet, urlUtils, GraphicsLayer, SimpleRenderer, SimpleLineSymbol,
+                    array, Color, ioQuery) {
             parser.parse();
             mobile.hideAddressBar();
+
 
             if (navigator.geolocation) {
               // if you want to track as the user moves setup navigator.geolocation.watchPostion
               navigator.geolocation.getCurrentPosition(get_location, get_location_error);
             }
 
+            var popup = new PopupMobile(null, domConstruct.create("div"));
+
+
+
+
             map = new Map("map", {
               //center: [-56.049, 38.485],
               //zoom: 3,
                 extent: new Extent({xmin:-13204343.762204075,ymin:3908072.382163536,xmax:-12771404.433997044,ymax:4149919.139657717,spatialReference:{wkid:102100}}),
-                basemap: "streets"
+                basemap: "streets",
+                //showInfoWindowOnClick:true,
+                infoWindow: popup
                 });
             map.on("load", map_loaded);
 
@@ -61,24 +88,135 @@
 
             function map_loaded()
             {
-                var supervisor_layer = new ArcGISDynamicMapServiceLayer("http://www.rctlma.org/siteadmin/rest/services/Public/Supervisorial_Districts/MapServer", {opacity:.25});
+                urlUtils.addProxyRule({
+                    proxyUrl:"/proxy/",
+                    urlPrefix:"http://sampleserver3.arcgisonline.com/ArcGIS/rest"
+                });
+                console.log("maploaded");
+
+
+                var supervisor_layer = new ArcGISDynamicMapServiceLayer("http://www.rctlma.org/siteadmin/rest/services/Public/Supervisorial_Districts/MapServer", {opacity:.5});
                 map.addLayer(supervisor_layer);
-                //http://services1.arcgis.com/CbqvrXravyhsUGrp/arcgis/rest/services/VotingLocations/FeatureServer/0
+
+                var polling_info_template = new InfoTemplate();
+                polling_info_template.setTitle("${Location_Name}");
+                polling_info_template.setContent("${Location_Name}");
+                var polling_layer_options = {
+                                                refreshInterval:1,
+                                                infoTemplate: polling_info_template,
+                                                outFields:["Location_Name", "Wait_Time"]
+                                            };
+                pollingplaces_layer = new FeatureLayer("http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/arcgis/rest/services/Voting_Locations/FeatureServer/0", polling_layer_options);
+                map.addLayer(pollingplaces_layer);
+
+                routeGraphicLayer = new GraphicsLayer();
+
+                var routePolylineSymbol = new SimpleLineSymbol(
+                  SimpleLineSymbol.STYLE_SOLID,
+                  new Color([89,95,35]),
+                  4.0
+                );
+                var routeRenderer = new SimpleRenderer(routePolylineSymbol);
+                routeGraphicLayer.setRenderer(routeRenderer);
+
+                map.addLayer(routeGraphicLayer);
             }
 
             function get_location(position)
             {
-                //
+                var vote_button = query("#sameVotesButton");
+                on(vote_button, "click", vote_button_action);
+
                 zoomToLocation(position);
             }
 
+            function vote_button_action(evt)
+            {
+                var uri = window.location.search;
+                var query = uri.substring(uri.indexOf("?") + 1, uri.length);
+                var queryObject = dojo.queryToObject(query);
+                console.log(queryObject);
+                if (queryObject.p)
+                {
+                    console.log("call the text message app!");
+                }
+
+
+                var params = new ClosestFacilityParameters();
+                params.impedenceAttribute= "Miles";
+                params.defaultCutoff= 3.0;
+                params.returnIncidents=false;
+                params.returnRoutes=true;
+                params.returnDirections=true;
+                params.defaultTargetFacilityCount = 1;
+                params.returnFacilities=false;
+
+
+                var facilities = new FeatureSet();
+                facilities.features = pollingplaces_layer.graphics;
+                array.forEach(facilities.features, function(g, i) {
+                    g.attributes['Attr_Time'] = g.attributes['Wait_Time'];
+                });
+
+                console.log(facilities.features);
+
+                var features = [];
+                features.push(map_location);
+                var incidents = new FeatureSet();
+                incidents.features = features;
+                params.incidents = incidents;
+
+                params.facilities = facilities;
+                params.outSpatialReference = map.spatialReference;
+
+                //var closestFacilityTask = new ClosestFacilityTask("http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World");
+                var closestFacilityTask = new ClosestFacilityTask("/proxy");
+                //var closestFacilityTask = new ClosestFacilityTask("http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Network/USA/NAServer/Closest Facility");
+
+
+                console.log(params);
+                closestFacilityTask.solve(params, function(solveResult) {
+                    console.log("pass");
+                    console.log(solveResult);
+                    console.log(solveResult.directions);
+
+
+
+                    array.forEach(solveResult.routes, function(route, index){
+                        //build an array of route info
+                        var attr = array.map(solveResult.directions[index].features, function(feature){
+                          return feature.attributes.text;
+                        });
+
+                        drive_times.push(solveResult.directions[index].totalDriveTime);
+                        map.setExtent(solveResult.directions[index].extent, true);
+                        //var infoTemplate = new InfoTemplate("Attributes", "${*}");
+
+                        //route.setInfoTemplate(infoTemplate);
+                        route.setAttributes(attr);
+                        console.log(route);
+
+                        routeGraphicLayer.add(route);
+                        //dom.byId("directionsDiv").innerHTML = "Hover over the route to view directions";
+                      });
+
+
+                }, function(err) {
+                    console.log("fail");
+                    console.log(err);
+                });
+
+
+
+                //ClosestFacilityTask
+            }
+
             function zoomToLocation(position) {
-                //$.mobile.hidePageLoadingMsg(); //true hides the dialog
                 var pt = esri.geometry.geographicToWebMercator(new Point(position.coords.longitude, position.coords.latitude));
+                map_location = new Graphic(pt);
                 map.centerAndZoom(pt, 13);
-                //uncomment to add a graphic at the current location
-                //var symbol = new PictureMarkerSymbol("images/bluedot.png", 40, 40);
-                //map.graphics.add(new Graphic(pt, symbol));
+                var symbol = new PictureMarkerSymbol("static/images/bluedot.png", 40, 40);
+                map.graphics.add(new Graphic(pt, symbol));
                 console.dir(position);
               }
 
@@ -129,7 +267,7 @@
 <body>
     <div id="mapView" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
       <div id="header" data-dojo-type="dojox.mobile.Heading">
-        <div id="updateMeButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" moveTo="aboutView">Update Me!</div>
+        <div id="sameVotesButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;">SAM Votes!</div>
         <div id="aboutButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" moveTo="aboutView">About</div>
       </div>
       <div id="mapContainer" data-dojo-type="dojox.mobile.ContentPane">

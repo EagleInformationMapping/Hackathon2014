@@ -8,6 +8,7 @@ from vote_app.views import send_text
 # admin.autodiscover()
 
 from vote_app.views import MobileApp
+from vote_app.views import proxy_view
 
 urlpatterns = patterns('',
     # Examples:
@@ -31,4 +32,5 @@ urlpatterns = patterns('',
     url(r'^sms', reply_to_sms_messages),
     url(r'^jamie', jamie_view),
     url(r'^send_text', send_text),
+    url(r'^proxy/(?P<path>.*)', proxy_view),
 )
