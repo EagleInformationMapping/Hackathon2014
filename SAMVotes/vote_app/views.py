@@ -39,12 +39,12 @@ class MobileApp(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(MobileApp, self).get_context_data(**kwargs)
-        h = Http()
-        resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
-        data = json.loads(content)
-        context['token_response'] = content
-        context['token'] = data['access_token']
-        print(context['token'])
+        # h = Http()
+        # resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
+        # data = json.loads(content)
+        # context['token_response'] = content
+        # context['token'] = data['access_token']
+        # print(context['token'])
         return context
 
 def reply_to_sms_messages(request):

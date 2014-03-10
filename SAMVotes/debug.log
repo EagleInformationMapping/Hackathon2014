@@ -262,3 +262,192 @@ Traceback (most recent call last):
   File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
     raise SSLHandshakeError(e)
 SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+ERROR 2014-03-10 07:28:01,158 base 16540 14856 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 154, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 43, in get_context_data
+    resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1544, in request
+    (response, content) = self._request(conn, authority, uri, request_uri, method, body, headers, redirections, cachekey)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1294, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1230, in _conn_request
+    conn.connect()
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
+    raise SSLHandshakeError(e)
+SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+ERROR 2014-03-10 07:30:14,426 base 16540 11576 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 154, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 43, in get_context_data
+    resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1544, in request
+    (response, content) = self._request(conn, authority, uri, request_uri, method, body, headers, redirections, cachekey)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1294, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1230, in _conn_request
+    conn.connect()
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
+    raise SSLHandshakeError(e)
+SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+ERROR 2014-03-10 07:36:05,434 base 12028 13924 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 154, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 44, in get_context_data
+    resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1544, in request
+    (response, content) = self._request(conn, authority, uri, request_uri, method, body, headers, redirections, cachekey)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1294, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1230, in _conn_request
+    conn.connect()
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
+    raise SSLHandshakeError(e)
+SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+ERROR 2014-03-10 07:36:47,082 base 10400 17112 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 154, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 43, in get_context_data
+    resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1544, in request
+    (response, content) = self._request(conn, authority, uri, request_uri, method, body, headers, redirections, cachekey)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1294, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1230, in _conn_request
+    conn.connect()
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
+    raise SSLHandshakeError(e)
+SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+ERROR 2014-03-10 07:40:27,236 base 6628 13108 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 154, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 43, in get_context_data
+    resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1544, in request
+    (response, content) = self._request(conn, authority, uri, request_uri, method, body, headers, redirections, cachekey)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1294, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1230, in _conn_request
+    conn.connect()
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
+    raise SSLHandshakeError(e)
+SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+ERROR 2014-03-10 07:43:09,992 base 6628 14520 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 154, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 43, in get_context_data
+    resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1544, in request
+    (response, content) = self._request(conn, authority, uri, request_uri, method, body, headers, redirections, cachekey)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1294, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1230, in _conn_request
+    conn.connect()
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
+    raise SSLHandshakeError(e)
+SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+ERROR 2014-03-10 07:45:00,927 base 6628 8228 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 154, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 43, in get_context_data
+    resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1544, in request
+    (response, content) = self._request(conn, authority, uri, request_uri, method, body, headers, redirections, cachekey)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1294, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1230, in _conn_request
+    conn.connect()
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
+    raise SSLHandshakeError(e)
+SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+ERROR 2014-03-10 07:45:38,872 base 6628 11624 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 154, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 43, in get_context_data
+    resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1544, in request
+    (response, content) = self._request(conn, authority, uri, request_uri, method, body, headers, redirections, cachekey)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1294, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1230, in _conn_request
+    conn.connect()
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
+    raise SSLHandshakeError(e)
+SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+ERROR 2014-03-10 07:47:53,944 base 6628 14008 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\generic\base.py", line 154, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 43, in get_context_data
+    resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials")
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1544, in request
+    (response, content) = self._request(conn, authority, uri, request_uri, method, body, headers, redirections, cachekey)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1294, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1230, in _conn_request
+    conn.connect()
+  File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
+    raise SSLHandshakeError(e)
+SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
