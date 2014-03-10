@@ -59,7 +59,7 @@
       <file leaf-file-name="mobile_app.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/templates/mobile_app.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="310" column="118" selection-start="14466" selection-end="14466" vertical-scroll-proportion="0.33613446" vertical-offset="4530" max-vertical-offset="5955">
+            <state line="385" column="86" selection-start="17575" selection-end="17575" vertical-scroll-proportion="0.71428573" vertical-offset="5520" max-vertical-offset="5955">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -686,7 +686,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/templates/mobile_app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="310" column="118" selection-start="14466" selection-end="14466" vertical-scroll-proportion="0.33613446" vertical-offset="4530" max-vertical-offset="5955">
+        <state line="385" column="86" selection-start="17575" selection-end="17575" vertical-scroll-proportion="0.71428573" vertical-offset="5520" max-vertical-offset="5955">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
