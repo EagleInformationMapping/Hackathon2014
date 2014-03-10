@@ -23,29 +23,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vote_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="28" selection-end="112" vertical-scroll-proportion="0.045945946" vertical-offset="0" max-vertical-offset="370">
-              <folding />
+            <state line="1" column="0" selection-start="26" selection-end="108" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <folding>
+                <element signature="e#26#59#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vote_app/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153">
-              <folding />
+            <state line="2" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="-0.18378378" vertical-offset="102" max-vertical-offset="612">
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,8 +57,8 @@
       <list>
         <option value="$PROJECT_DIR$/templates/mobile_app.html" />
         <option value="$PROJECT_DIR$/SAMVotes/settings.py" />
-        <option value="$PROJECT_DIR$/SAMVotes/urls.py" />
         <option value="$PROJECT_DIR$/vote_app/views.py" />
+        <option value="$PROJECT_DIR$/SAMVotes/urls.py" />
       </list>
     </option>
   </component>
@@ -439,7 +434,9 @@
     <entry file="file://$PROJECT_DIR$/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="36" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="221">
-          <folding />
+          <folding>
+            <element signature="e#26#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -534,17 +531,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
+    <entry file="file://$PROJECT_DIR$/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <folding />
+        <state line="1" column="0" selection-start="26" selection-end="108" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <folding>
+            <element signature="e#26#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vote_app/views.py">
+    <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="28" selection-end="112" vertical-scroll-proportion="0.045945946" vertical-offset="0" max-vertical-offset="370">
-          <folding />
+        <state line="2" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="-0.18378378" vertical-offset="102" max-vertical-offset="612">
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
