@@ -26,7 +26,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="12" selection-start="53" selection-end="53" vertical-scroll-proportion="0.060390763" vertical-offset="0" max-vertical-offset="2754">
+            <state line="124" column="20" selection-start="4418" selection-end="4418" vertical-scroll-proportion="0.5133215" vertical-offset="1819" max-vertical-offset="2771">
               <folding />
             </state>
           </provider>
@@ -35,8 +35,10 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="31" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <folding />
+            <state line="1" column="20" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,7 +46,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vote_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+            <state line="1" column="20" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
@@ -70,8 +72,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/templates/mobile_app.html" />
-        <option value="$PROJECT_DIR$/vote_app/views.py" />
         <option value="$PROJECT_DIR$/SAMVotes/urls.py" />
+        <option value="$PROJECT_DIR$/vote_app/views.py" />
         <option value="$PROJECT_DIR$/SAMVotes/settings.py" />
       </list>
     </option>
@@ -455,7 +457,9 @@
     <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="42" selection-start="641" selection-end="641" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="459">
-          <folding />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -473,13 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vote_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/mobile_app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="46" selection-start="516" selection-end="516" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="2720">
@@ -489,14 +486,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="31" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+        <state line="1" column="20" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vote_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="20" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="12" selection-start="53" selection-end="53" vertical-scroll-proportion="0.060390763" vertical-offset="0" max-vertical-offset="2754">
+        <state line="124" column="20" selection-start="4418" selection-end="4418" vertical-scroll-proportion="0.5133215" vertical-offset="1819" max-vertical-offset="2771">
           <folding />
         </state>
       </provider>
