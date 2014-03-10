@@ -1,0 +1,22 @@
+ERROR 2014-03-10 04:07:28,148 base 15384 15592 Internal Server Error: /sms/
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django_twilio\decorators.py", line 96, in decorator
+    response = f(request_or_self, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 15, in reply_to_sms_messages
+    TextPhone.run('what up!!')
+TypeError: unbound method run() must be called with TextPhone instance as first argument (got str instance instead)
+ERROR 2014-03-10 04:08:12,384 base 14984 12596 Internal Server Error: /sms/
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Workspace\Hackathon2014\site-packages\django_twilio\decorators.py", line 96, in decorator
+    response = f(request_or_self, *args, **kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 16, in reply_to_sms_messages
+    t.run('what up!!!')
+TypeError: unbound method run() must be called with TextPhone instance as first argument (got str instance instead)
