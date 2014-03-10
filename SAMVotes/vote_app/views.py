@@ -7,8 +7,8 @@ from django.views.generic import TemplateView
 class MobileApp(TemplateView):
     template_name = 'mobile_app.html'
 
-@twilio_view
-def reply_to_sms_messages(request):
-    r = Response()
-    r.sms('Thanks for the SMS message!')
-    return r
+# @twilio_view
+# def reply_to_sms_messages(request):
+#     r = Response()
+#     r.sms('Thanks for the SMS message!')
+#     return r
