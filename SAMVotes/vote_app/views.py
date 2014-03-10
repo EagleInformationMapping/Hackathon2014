@@ -14,7 +14,7 @@ def reply_to_sms_messages(request):
     l = list()
     for i in request.GET.keys():
         l.append(i)
-        l.append(request.GET[i])
+        l.append(request.GET.get(i))
 
     r = HttpResponse('<Response><Sms>Your phone number is {}</Sms></Response>'.format(l), 'text/XML')
     return r
