@@ -12,7 +12,7 @@ def reply_to_sms_messages(request):
     # r = Response()
     # r.sms('Thanks for the SMS message!')
     # t = TextPhone()
-    # t.run('what up!!!')
+    # t.run('what up!!!;lkas;jfkadsjafjds;lka;kjag')
     # r = '<Response><Sms>Thanks for the SMS message!</Sms></Response>'
     # l = list()
     # for i in request.GET.keys():
