@@ -26,7 +26,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAMVotes/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2754">
+            <state line="2" column="13" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2754">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="17" selection-start="672" selection-end="672" vertical-scroll-proportion="0.72432435" vertical-offset="72" max-vertical-offset="510">
+            <state line="20" column="31" selection-start="686" selection-end="686" vertical-scroll-proportion="0.60390764" vertical-offset="0" max-vertical-offset="563">
               <folding />
             </state>
           </provider>
@@ -54,44 +54,7 @@
         <entry file="file://$PROJECT_DIR$/templates/mobile_app.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="9" column="46" selection-start="516" selection-end="516" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="2720">
-              <folding>
-                <marker date="1394414550363" expanded="true" signature="21:6257" placeholder="..." />
-                <marker date="1394414550363" expanded="true" signature="28:4848" placeholder="..." />
-                <marker date="1394414550363" expanded="true" signature="582:888" placeholder="..." />
-                <marker date="1394414550363" expanded="true" signature="613:718" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="737:772" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="787:874" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="1035:4840" placeholder="..." />
-                <marker date="1394414550363" expanded="true" signature="1070:1432" placeholder="[...]" />
-                <marker date="1394414550363" expanded="true" signature="1541:4821" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="1648:1850" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="1885:2173" placeholder="{&quot;basemap&quot;: &quot;streets&quot;...}" />
-                <marker date="1394414550363" expanded="true" signature="1901:1954" placeholder="//..." />
-                <marker date="1394414550363" expanded="true" signature="2435:2792" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="2850:2926" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="2974:3490" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="3236:3435" placeholder="//..." />
-                <marker date="1394414550363" expanded="true" signature="3551:3657" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="3693:3840" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="3881:4187" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="4040:4108" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="4229:4809" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="4309:4511" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="4311:4382" placeholder="//..." />
-                <marker date="1394414550363" expanded="true" signature="4453:4495" placeholder="/*...*/" />
-                <marker date="1394414550363" expanded="true" signature="4517:4795" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="4519:4606" placeholder="//..." />
-                <marker date="1394414550363" expanded="true" signature="4667:4751" placeholder="{...}" />
-                <marker date="1394414550363" expanded="true" signature="4855:6249" placeholder="..." />
-                <marker date="1394414550363" expanded="true" signature="4946:5408" placeholder="..." />
-                <marker date="1394414550363" expanded="true" signature="5008:5283" placeholder="..." />
-                <marker date="1394414550363" expanded="false" signature="5094:5107" placeholder="..." />
-                <marker date="1394414550363" expanded="false" signature="5226:5239" placeholder="..." />
-                <marker date="1394414550363" expanded="true" signature="5355:5397" placeholder="..." />
-                <marker date="1394414550363" expanded="true" signature="5469:6239" placeholder="..." />
-                <marker date="1394414550363" expanded="false" signature="5593:5606" placeholder="..." />
-                <marker date="1394414550363" expanded="true" signature="5689:6228" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,6 +72,7 @@
         <option value="$PROJECT_DIR$/templates/mobile_app.html" />
         <option value="$PROJECT_DIR$/vote_app/views.py" />
         <option value="$PROJECT_DIR$/SAMVotes/urls.py" />
+        <option value="$PROJECT_DIR$/SAMVotes/settings.py" />
       </list>
     </option>
   </component>
@@ -426,7 +390,9 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -445,18 +411,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25378788" sideWeight="0.67232597" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25378788" sideWeight="0.67232597" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39898133" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32767403" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -503,88 +469,14 @@
     <entry file="file://$PROJECT_DIR$/templates/mobile_app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="174" selection-start="2611" selection-end="2611" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2720">
-          <folding>
-            <marker date="1394414550363" expanded="true" signature="21:6257" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="28:4848" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="582:888" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="613:718" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="737:772" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="787:874" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="1035:4840" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="1070:1432" placeholder="[...]" />
-            <marker date="1394414550363" expanded="true" signature="1541:4821" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="1648:1850" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="1885:2173" placeholder="{&quot;basemap&quot;: &quot;streets&quot;...}" />
-            <marker date="1394414550363" expanded="true" signature="1901:1954" placeholder="//..." />
-            <marker date="1394414550363" expanded="true" signature="2435:2792" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="2850:2926" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="2974:3490" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="3236:3435" placeholder="//..." />
-            <marker date="1394414550363" expanded="true" signature="3551:3657" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="3693:3840" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="3881:4187" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4040:4108" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4229:4809" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4309:4511" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4311:4382" placeholder="//..." />
-            <marker date="1394414550363" expanded="true" signature="4453:4495" placeholder="/*...*/" />
-            <marker date="1394414550363" expanded="true" signature="4517:4795" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4519:4606" placeholder="//..." />
-            <marker date="1394414550363" expanded="true" signature="4667:4751" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4855:6249" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="4946:5408" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="5008:5283" placeholder="..." />
-            <marker date="1394414550363" expanded="false" signature="5094:5107" placeholder="..." />
-            <marker date="1394414550363" expanded="false" signature="5226:5239" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="5355:5397" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="5469:6239" placeholder="..." />
-            <marker date="1394414550363" expanded="false" signature="5593:5606" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="5689:6228" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mobile_app.html">
+    <entry file="file://$PROJECT_DIR$/SAMVotes/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="46" selection-start="516" selection-end="516" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="2720">
-          <folding>
-            <marker date="1394414550363" expanded="true" signature="21:6257" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="28:4848" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="582:888" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="613:718" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="737:772" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="787:874" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="1035:4840" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="1070:1432" placeholder="[...]" />
-            <marker date="1394414550363" expanded="true" signature="1541:4821" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="1648:1850" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="1885:2173" placeholder="{&quot;basemap&quot;: &quot;streets&quot;...}" />
-            <marker date="1394414550363" expanded="true" signature="1901:1954" placeholder="//..." />
-            <marker date="1394414550363" expanded="true" signature="2435:2792" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="2850:2926" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="2974:3490" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="3236:3435" placeholder="//..." />
-            <marker date="1394414550363" expanded="true" signature="3551:3657" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="3693:3840" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="3881:4187" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4040:4108" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4229:4809" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4309:4511" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4311:4382" placeholder="//..." />
-            <marker date="1394414550363" expanded="true" signature="4453:4495" placeholder="/*...*/" />
-            <marker date="1394414550363" expanded="true" signature="4517:4795" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4519:4606" placeholder="//..." />
-            <marker date="1394414550363" expanded="true" signature="4667:4751" placeholder="{...}" />
-            <marker date="1394414550363" expanded="true" signature="4855:6249" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="4946:5408" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="5008:5283" placeholder="..." />
-            <marker date="1394414550363" expanded="false" signature="5094:5107" placeholder="..." />
-            <marker date="1394414550363" expanded="false" signature="5226:5239" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="5355:5397" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="5469:6239" placeholder="..." />
-            <marker date="1394414550363" expanded="false" signature="5593:5606" placeholder="..." />
-            <marker date="1394414550363" expanded="true" signature="5689:6228" placeholder="..." />
-          </folding>
+        <state line="2" column="13" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2754">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -595,16 +487,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/mobile_app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+        <state line="9" column="46" selection-start="516" selection-end="516" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="2720">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="17" selection-start="672" selection-end="672" vertical-scroll-proportion="0.72432435" vertical-offset="72" max-vertical-offset="510">
+        <state line="20" column="31" selection-start="686" selection-end="686" vertical-scroll-proportion="0.60390764" vertical-offset="0" max-vertical-offset="563">
           <folding />
         </state>
       </provider>
