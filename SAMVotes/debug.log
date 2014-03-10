@@ -27,3 +27,10 @@ Traceback (most recent call last):
   File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 14, in reply_to_sms_messages
     p = request._get('From')
 AttributeError: 'WSGIRequest' object has no attribute '_get'
+ERROR 2014-03-10 04:29:05,595 base 8940 10248 Internal Server Error: /sms/
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 14, in reply_to_sms_messages
+    p = request.GET('From')
+TypeError: 'QueryDict' object is not callable
