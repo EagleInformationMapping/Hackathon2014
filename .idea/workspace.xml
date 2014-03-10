@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mobile_app.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SAMVotes/templates/mobile_app.html">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="258" column="0" selection-start="10676" selection-end="10676" vertical-scroll-proportion="-0.0" vertical-offset="4386" max-vertical-offset="5066">
+            <state line="69" column="0" selection-start="2512" selection-end="2512" vertical-scroll-proportion="-6.12" vertical-offset="1020" max-vertical-offset="2992">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="33" selection-start="134" selection-end="134" vertical-scroll-proportion="4.68" vertical-offset="151" max-vertical-offset="714">
+            <state line="2" column="33" selection-start="134" selection-end="134" vertical-scroll-proportion="12.84" vertical-offset="355" max-vertical-offset="714">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="37" selection-start="2751" selection-end="2751" vertical-scroll-proportion="1.0" vertical-offset="908" max-vertical-offset="1649">
+            <state line="66" column="40" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.6426426" vertical-offset="908" max-vertical-offset="1751">
               <folding>
                 <element signature="e#26#62#0" expanded="true" />
               </folding>
@@ -72,6 +72,7 @@
       <list>
         <option value="$PROJECT_DIR$/SAMVotes/templates/mobile_app.html" />
         <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" />
+        <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/settings.py" />
         <option value="$PROJECT_DIR$/SAMVotes/vote_app/views.py" />
       </list>
     </option>
@@ -406,7 +407,9 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -415,6 +418,23 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="d51f9a74-ce2e-4169-8388-1a16687e09d6" name="Default" comment="" />
@@ -425,7 +445,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -433,10 +453,10 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26136363" sideWeight="0.67402375" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39898133" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32597622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32597622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -456,7 +476,15 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/SAMVotes/vote_app/views.py</url>
+          <line>63</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SAMVotes/templates/mobile_app.html">
@@ -505,9 +533,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
+    <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="33" selection-start="134" selection-end="134" vertical-scroll-proportion="4.68" vertical-offset="151" max-vertical-offset="714">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="371">
           <folding />
         </state>
       </provider>
@@ -519,9 +547,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="2512" selection-end="2512" vertical-scroll-proportion="-6.12" vertical-offset="1020" max-vertical-offset="2992">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="33" selection-start="134" selection-end="134" vertical-scroll-proportion="12.84" vertical-offset="355" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="37" selection-start="2751" selection-end="2751" vertical-scroll-proportion="1.0" vertical-offset="908" max-vertical-offset="1649">
+        <state line="66" column="40" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.6426426" vertical-offset="908" max-vertical-offset="1751">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
           </folding>

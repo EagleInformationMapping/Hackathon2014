@@ -59,13 +59,18 @@ def reply_to_sms_messages(request):
     #     l.append(request.GET.get(i))
 
     u = User()
-    u.body = request.GET.get('Body')
-    u.number = request.GET.get('From')
-    u.time = datetime.datetime.now()
-    u.save()
-    l = request.GET.get('From')
 
-    r = HttpResponse('<Response><Sms>Thanks! Check out your nearest polling location! {}</Sms></Response>'.format('http://hackathon2014.azurewebsites.net/?p={}'.format(l)), 'text/XML')
+
+    if len(User.objects.filter(number=request.GET.get('From'))) != 1:
+        u.body = request.GET.get('Body')
+        u.number = request.GET.get('From')
+        u.time = datetime.datetime.now()
+        u.save()
+        l = request.GET.get('From')
+        r = HttpResponse('<Response><Sms>Thanks! Check out your nearest polling location! {}</Sms></Response>'.format('http://hackathon2014.azurewebsites.net/?p={}'.format(l)), 'text/XML')
+    # r = HttpResponse('<Response><Sms>Thank you for participating! '
+    #                  'Stay tuned for your nearing polling '
+    #                  'location!</Sms></Response>', 'text/XML')
     return r
 
 def jamie_view(request):
@@ -80,6 +85,7 @@ def jamie_view(request):
 
 def send_text(request):
     number = request.GET.get('n', None)
+    body = request.GET.get('b', None)
     if number is None:
         return HttpResponse('')
 
@@ -88,5 +94,5 @@ def send_text(request):
     client = TwilioRestClient(account_sid, auth_token)
 
     message = client.messages.create(to=number, from_="+18329248472",
-                                     body="Thank you for participating!")
+                                     body=body)
     return HttpResponse('')

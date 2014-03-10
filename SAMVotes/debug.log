@@ -451,3 +451,31 @@ Traceback (most recent call last):
   File "C:\Workspace\eaglepy\eaglepy-library\src\httplib2\__init__.py", line 1005, in connect
     raise SSLHandshakeError(e)
 SSLHandshakeError: [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+DEBUG 2014-03-10 09:07:42,407 util 15912 13572 (0.002) QUERY = u'BEGIN' - PARAMS = (); args=None
+DEBUG 2014-03-10 09:07:42,423 util 15912 13572 (0.001) QUERY = u'INSERT INTO "vote_app_user" ("time", "number", "body") VALUES (%s, %s, %s)' - PARAMS = (u'2014-03-10 14:07:42.339000', 2816861001L, u'something'); args=[u'2014-03-10 14:07:42.339000', 2816861001L, u'something']
+DEBUG 2014-03-10 09:09:08,134 util 15912 17796 (0.037) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" DESC' - PARAMS = (); args=()
+DEBUG 2014-03-10 09:09:41,779 util 15912 1964 (0.001) QUERY = u'BEGIN' - PARAMS = (); args=None
+DEBUG 2014-03-10 09:09:41,779 util 15912 1964 (0.001) QUERY = u'INSERT INTO "vote_app_user" ("time", "number", "body") VALUES (%s, %s, %s)' - PARAMS = (u'2014-03-10 14:09:41.778000', 2816309495L, u'something'); args=[u'2014-03-10 14:09:41.778000', 2816309495L, u'something']
+DEBUG 2014-03-10 09:10:58,338 util 15912 12876 (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+DEBUG 2014-03-10 09:10:58,344 util 15912 12876 (0.003) QUERY = u'INSERT INTO "vote_app_user" ("time", "number", "body") VALUES (%s, %s, %s)' - PARAMS = (u'2014-03-10 14:10:58.338000', 2816861001L, u'something'); args=[u'2014-03-10 14:10:58.338000', 2816861001L, u'something']
+ERROR 2014-03-10 09:10:58,351 base 15912 12876 Internal Server Error: /sms
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 77, in reply_to_sms_messages
+    return r
+UnboundLocalError: local variable 'r' referenced before assignment
+DEBUG 2014-03-10 09:14:04,217 util 15932 11812 (0.002) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" DESC' - PARAMS = (); args=()
+DEBUG 2014-03-10 09:14:32,980 util 15932 9432 (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+DEBUG 2014-03-10 09:14:32,986 util 15932 9432 (0.003) QUERY = u'INSERT INTO "vote_app_user" ("time", "number", "body") VALUES (%s, %s, %s)' - PARAMS = (u'2014-03-10 14:14:32.980000', 8329223574L, u'something'); args=[u'2014-03-10 14:14:32.980000', 8329223574L, u'something']
+WARNING 2014-03-10 09:20:48,913 base 12772 15428 Not Found: /jame
+DEBUG 2014-03-10 09:20:56,517 util 12772 1112 (0.001) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" DESC' - PARAMS = (); args=()
+DEBUG 2014-03-10 09:21:16,838 util 12772 13904 (0.001) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user"' - PARAMS = (); args=()
+DEBUG 2014-03-10 09:21:16,838 util 12772 13904 (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+DEBUG 2014-03-10 09:21:16,844 util 12772 13904 (0.001) QUERY = u'INSERT INTO "vote_app_user" ("time", "number", "body") VALUES (%s, %s, %s)' - PARAMS = (u'2014-03-10 14:21:16.839000', 2816861001L, u'something'); args=[u'2014-03-10 14:21:16.839000', 2816861001L, u'something']
+DEBUG 2014-03-10 09:28:08,459 util 18036 16316 (0.001) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" WHERE "vote_app_user"."number" = %s ' - PARAMS = (2816861001L,); args=(2816861001L,)
+DEBUG 2014-03-10 09:28:08,460 util 18036 16316 (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+DEBUG 2014-03-10 09:28:08,461 util 18036 16316 (0.001) QUERY = u'INSERT INTO "vote_app_user" ("time", "number", "body") VALUES (%s, %s, %s)' - PARAMS = (u'2014-03-10 14:28:08.460000', 2816861001L, u'something'); args=[u'2014-03-10 14:28:08.460000', 2816861001L, u'something']
+DEBUG 2014-03-10 09:28:12,571 util 18036 17912 (0.001) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" WHERE "vote_app_user"."number" = %s ' - PARAMS = (2816861001L,); args=(2816861001L,)
+DEBUG 2014-03-10 09:28:12,572 util 18036 17912 (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+DEBUG 2014-03-10 09:28:12,572 util 18036 17912 (0.001) QUERY = u'INSERT INTO "vote_app_user" ("time", "number", "body") VALUES (%s, %s, %s)' - PARAMS = (u'2014-03-10 14:28:12.572000', 2816861001L, u'something'); args=[u'2014-03-10 14:28:12.572000', 2816861001L, u'something']
