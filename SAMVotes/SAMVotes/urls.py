@@ -18,4 +18,7 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     url(r'^', MobileApp.as_view()),
+    url(r'^hello_world/$', 'django_twilio.views.say', {
+        'text': 'Hello, world!'
+    }),
 )
