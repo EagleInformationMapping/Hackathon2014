@@ -21,20 +21,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'sql_server.pyodbc',
-#         'NAME': 'hackathon2014',
-#         'USER': '',
-#         'PASSWORD': '',
-#         'HOST': 'localhost\\gn',
-#         'PORT': '',
-#         'OPTIONS': {
-#             'driver': 'SQL Server Native Client 11.0',
-#         }
-#     }
-# }
-
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []

@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="5" selection-start="706" selection-end="706" vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="3077">
+            <state line="21" column="1" selection-start="708" selection-end="708" vertical-scroll-proportion="-4.7249284" vertical-offset="2006" max-vertical-offset="2839">
               <folding />
             </state>
           </provider>
@@ -52,10 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="31" selection-start="820" selection-end="820" vertical-scroll-proportion="0.63323784" vertical-offset="204" max-vertical-offset="612">
+            <state line="25" column="31" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="612">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -128,9 +128,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/templates/mobile_app.html" />
-        <option value="$PROJECT_DIR$/SAMVotes/settings.py" />
         <option value="$PROJECT_DIR$/vote_app/views.py" />
         <option value="$PROJECT_DIR$/SAMVotes/urls.py" />
+        <option value="$PROJECT_DIR$/SAMVotes/settings.py" />
       </list>
     </option>
   </component>
@@ -589,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="5" selection-start="706" selection-end="706" vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="3077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../site-packages/django_twilio/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="12" selection-start="93" selection-end="110" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
@@ -614,10 +607,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="31" selection-start="820" selection-end="820" vertical-scroll-proportion="0.63323784" vertical-offset="204" max-vertical-offset="612">
+        <state line="25" column="31" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="612">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SAMVotes/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="1" selection-start="708" selection-end="708" vertical-scroll-proportion="-4.7249284" vertical-offset="2006" max-vertical-offset="2839">
+          <folding />
         </state>
       </provider>
     </entry>
