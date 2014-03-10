@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d51f9a74-ce2e-4169-8388-1a16687e09d6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SAMVotes/static/web.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/SAMVotes/settings.py" afterPath="$PROJECT_DIR$/SAMVotes/SAMVotes/settings.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SAMVotes/static/web.config" afterPath="$PROJECT_DIR$/web.config" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hackathon2014.iws" />
@@ -37,9 +36,9 @@
         </entry>
       </file>
       <file leaf-file-name="web.config" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SAMVotes/static/web.config">
+        <entry file="file://$PROJECT_DIR$/web.config">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="61" selection-start="146" selection-end="146" vertical-scroll-proportion="0.15228426" vertical-offset="0" max-vertical-offset="394">
+            <state line="6" column="18" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="495">
               <folding />
             </state>
           </provider>
@@ -62,6 +61,7 @@
             <state line="59" column="67" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.0" vertical-offset="332" max-vertical-offset="1740">
               <folding>
                 <element signature="e#26#62#0" expanded="true" />
+                <marker date="1394461783000" expanded="true" signature="1523:2181" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -103,6 +103,7 @@
         <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" />
         <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/settings.py" />
         <option value="$PROJECT_DIR$/SAMVotes/static/web.config" />
+        <option value="$PROJECT_DIR$/web.config" />
       </list>
     </option>
   </component>
@@ -301,6 +302,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/SAMVotes" />
     </key>
   </component>
@@ -601,6 +603,7 @@
         <state line="66" column="40" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1545">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
+            <marker date="1394461783000" expanded="true" signature="1523:2181" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -630,6 +633,7 @@
         <state line="38" column="0" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1683">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
+            <marker date="1394461783000" expanded="true" signature="1523:2181" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -659,6 +663,7 @@
         <state line="8" column="45" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1683">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
+            <marker date="1394461783000" expanded="true" signature="1523:2181" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -673,6 +678,7 @@
         <state line="59" column="67" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.0" vertical-offset="332" max-vertical-offset="1740">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
+            <marker date="1394461783000" expanded="true" signature="1523:2181" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -704,9 +710,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/static/web.config">
+    <entry file="file://$PROJECT_DIR$/web.config">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="61" selection-start="146" selection-end="146" vertical-scroll-proportion="0.15228426" vertical-offset="0" max-vertical-offset="394">
+        <state line="6" column="18" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="495">
           <folding />
         </state>
       </provider>
