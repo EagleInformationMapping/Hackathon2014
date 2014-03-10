@@ -150,3 +150,8 @@ TypeError: datetime.datetime(2014, 3, 10, 10, 31, 59, 428000, tzinfo=<UTC>) is n
 DEBUG 2014-03-10 05:32:57,874 util 15716 15868 (0.002) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user"' - PARAMS = (); args=()
 WARNING 2014-03-10 05:35:39,326 base 7036 16092 Not Found: /jame
 DEBUG 2014-03-10 05:35:45,426 util 7036 8140 (0.002) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" ASC' - PARAMS = (); args=()
+DEBUG 2014-03-10 05:39:51,673 util 7036 14828 (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+DEBUG 2014-03-10 05:39:51,680 util 7036 14828 (0.002) QUERY = u'INSERT INTO "vote_app_user" ("time", "number", "body") VALUES (%s, %s, %s)' - PARAMS = (u'2014-03-10 10:39:51.672000', 8784989, u'ljksjdfklj'); args=[u'2014-03-10 10:39:51.672000', 8784989, u'ljksjdfklj']
+DEBUG 2014-03-10 05:40:00,841 util 7036 14204 (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+DEBUG 2014-03-10 05:40:00,845 util 7036 14204 (0.002) QUERY = u'INSERT INTO "vote_app_user" ("time", "number", "body") VALUES (%s, %s, %s)' - PARAMS = (u'2014-03-10 10:40:00.840000', 87823, u'ljksjdfklj'); args=[u'2014-03-10 10:40:00.840000', 87823, u'ljksjdfklj']
+DEBUG 2014-03-10 05:40:07,834 util 7036 11000 (0.000) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" ASC' - PARAMS = (); args=()
