@@ -18,9 +18,13 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^hello_world/$', 'django_twilio.views.say', {
-        'text': 'Hello, world!'
+
+    # ...
+    url(r'^sms/$', 'django_twilio.views.sms', {
+        'message': 'Thanks for the SMS. Talk to you soon!',
     }),
+    # ...
+
 
     # url(r'^sms/$', reply_to_sms_messages, {
     #     'text': 'Hello, world!'
