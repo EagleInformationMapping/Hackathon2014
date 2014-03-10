@@ -35,7 +35,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="33" selection-start="134" selection-end="134" vertical-scroll-proportion="-1.36" vertical-offset="0" max-vertical-offset="714">
+            <state line="2" column="33" selection-start="134" selection-end="134" vertical-scroll-proportion="13.4" vertical-offset="369" max-vertical-offset="714">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.46084338" vertical-offset="493" max-vertical-offset="1683">
+            <state line="38" column="0" selection-start="1424" selection-end="1424" vertical-scroll-proportion="-0.7680723" vertical-offset="901" max-vertical-offset="1683">
               <folding>
                 <element signature="e#26#62#0" expanded="true" />
               </folding>
@@ -435,7 +435,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25757575" sideWeight="0.67232597" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32767403" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -491,14 +491,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="33" selection-start="134" selection-end="134" vertical-scroll-proportion="-1.36" vertical-offset="0" max-vertical-offset="714">
+        <state line="2" column="33" selection-start="134" selection-end="134" vertical-scroll-proportion="13.4" vertical-offset="369" max-vertical-offset="714">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.46084338" vertical-offset="493" max-vertical-offset="1683">
+        <state line="38" column="0" selection-start="1424" selection-end="1424" vertical-scroll-proportion="-0.7680723" vertical-offset="901" max-vertical-offset="1683">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
           </folding>
