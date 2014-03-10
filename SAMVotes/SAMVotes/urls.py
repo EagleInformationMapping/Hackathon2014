@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-import django_twilio
+from vote_app.views import reply_to_sms_messages
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -21,5 +21,10 @@ urlpatterns = patterns('',
     url(r'^hello_world/$', 'django_twilio.views.say', {
         'text': 'Hello, world!'
     }),
+
+    url(regex=r'^sms/$',
+        view=reply_to_sms_messages,
+        name='sms'),
+
     url(r'^', MobileApp.as_view()),
 )
