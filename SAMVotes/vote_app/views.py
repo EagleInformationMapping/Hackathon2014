@@ -74,13 +74,13 @@ def reply_to_sms_messages(request):
     u = User()
 
 
-    if len(User.objects.filter(number=request.GET.get('From'))) != 1:
-        u.body = request.GET.get('Body')
-        u.number = request.GET.get('From')
-        u.time = datetime.datetime.now()
-        u.save()
-        l = request.GET.get('From')
-        r = HttpResponse('<Response><Sms>Thanks! Check out your nearest polling location! {}</Sms></Response>'.format('http://hackathon2014.azurewebsites.net/?p={}'.format(l)), 'text/XML')
+    # if len(User.objects.filter(number=request.GET.get('From'))) != 1:
+    u.body = request.GET.get('Body')
+    u.number = request.GET.get('From')
+    u.time = datetime.datetime.now()
+    u.save()
+    l = request.GET.get('From')
+    r = HttpResponse('<Response><Sms>Thanks! Check out your nearest polling location! {}</Sms></Response>'.format('http://hackathon2014.azurewebsites.net/?p={}'.format(l)), 'text/XML')
     # r = HttpResponse('<Response><Sms>Thank you for participating! '
     #                  'Stay tuned for your nearing polling '
     #                  'location!</Sms></Response>', 'text/XML')
