@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from vote_app.views import reply_to_sms_messages
+# from vote_app.views import reply_to_sms_messages
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin

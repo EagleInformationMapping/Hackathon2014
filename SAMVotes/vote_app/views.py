@@ -1,6 +1,6 @@
 # Create your views here.
-from twilio.twiml import Response
-from django_twilio.decorators import twilio_view
+# from twilio.twiml import Response
+# from django_twilio.decorators import twilio_view
 from django.views.generic import TemplateView
 
 
