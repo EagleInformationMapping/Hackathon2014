@@ -20,3 +20,10 @@ Traceback (most recent call last):
   File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 16, in reply_to_sms_messages
     t.run('what up!!!')
 TypeError: unbound method run() must be called with TextPhone instance as first argument (got str instance instead)
+ERROR 2014-03-10 04:26:21,588 base 14728 14740 Internal Server Error: /sms/
+Traceback (most recent call last):
+  File "C:\Workspace\Hackathon2014\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Workspace\Hackathon2014\SAMVotes\vote_app\views.py", line 14, in reply_to_sms_messages
+    p = request._get('From')
+AttributeError: 'WSGIRequest' object has no attribute '_get'
