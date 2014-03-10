@@ -38,7 +38,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vote_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="18" selection-start="466" selection-end="466" vertical-scroll-proportion="0.730659" vertical-offset="0" max-vertical-offset="408">
+            <state line="17" column="0" selection-start="501" selection-end="501" vertical-scroll-proportion="0.82808024" vertical-offset="0" max-vertical-offset="425">
               <folding>
                 <element signature="e#26#62#0" expanded="true" />
               </folding>
@@ -636,7 +636,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="18" selection-start="466" selection-end="466" vertical-scroll-proportion="0.730659" vertical-offset="0" max-vertical-offset="408">
+        <state line="17" column="0" selection-start="501" selection-end="501" vertical-scroll-proportion="0.82808024" vertical-offset="0" max-vertical-offset="425">
           <folding>
             <element signature="e#26#62#0" expanded="true" />
           </folding>
