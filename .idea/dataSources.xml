@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1331553745">
+    <data-source source="LOCAL" name="Django default" uuid="651534cd-8145-473e-92de-b6654d914b44">
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Workspace\Hackathon2014\SAMVotes\db.sqlite</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
