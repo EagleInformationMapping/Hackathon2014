@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d51f9a74-ce2e-4169-8388-1a16687e09d6" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/SAMVotes/static/web.config" afterPath="$PROJECT_DIR$/web.config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/handler.fcgi" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hackathon2014.iws" />
@@ -706,6 +706,13 @@
     <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="51" selection-start="2420" selection-end="2420" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="2640">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler.fcgi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="394">
           <folding />
         </state>
       </provider>
