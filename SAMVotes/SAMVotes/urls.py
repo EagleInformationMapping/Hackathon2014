@@ -10,6 +10,7 @@ from vote_app.views import send_text
 from vote_app.views import MobileApp
 from vote_app.views import proxy_view
 from vote_app.views import proxy_view_gp
+from vite_app.views import load_test
 
 urlpatterns = patterns('',
     # Examples:
@@ -35,4 +36,5 @@ urlpatterns = patterns('',
     url(r'^send_text', send_text),
     url(r'^proxy/(?P<path>.*)', proxy_view),
     url(r'^proxy_gp/(?P<path>.*)', proxy_view_gp),
+    url(r'^loaderio-5aae65f5b1da419918b14ce0624c494d', load_test)
 )
