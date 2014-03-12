@@ -52,6 +52,9 @@
         var drive_times = [];
         var max_drive_time = 0;
         var loadingImg;
+        var max_time = 500;
+        var max_feature;
+        var max_attributes;
         //var closestFacilityTask;
         require([
             "esri/map", "dojox/mobile", "dojox/mobile/parser", "esri/sniff",
@@ -120,7 +123,7 @@
                 polling_info_template.setTitle("${Location_Name}");
                 polling_info_template.setContent('<div style="width: 300px; background-color: #0B1A8D;" ><p align="center" class="gold">${Location_Name}</p><p align="center" class="gold">${Wait_Time} Min. Wait</p><p align="center" class="gold">${Address}</p></div>');
                 var polling_layer_options = {
-                                                refreshInterval:1,
+                                                refreshInterval:.1,
                                                 infoTemplate: polling_info_template,
                                                 outFields:["Location_Name", "Wait_Time", "OBJECTID", "Address"]
                                             };
@@ -180,8 +183,9 @@
                 query.outSpatialReference = map.spatialReference;
                 query.returnGeometry = true;
 
-                var max_time = 500;
-                var max_feature;
+                max_time = 500;
+                //var max_feature;
+                //var max_attributes;
                 pollingplaces_layer.queryFeatures(query, function(result) {
                     console.log("query return.");
                     console.log(result);
@@ -190,6 +194,7 @@
                        if (data.attributes["Wait_Time"] < max_time)
                        {
                            max_time = data.attributes["Wait_Time"];
+                           max_attributes = data.attributes;
                            max_feature = data;
                            console.log(data);
                        }
@@ -200,6 +205,9 @@
                         send_text("Your nearest voting location is: "+max_feature.attributes['Address']+" Palm Springs, CA.  " +
                                 "This app brought to you by eaglemap.com, itnexus.com and Bolt Geographic");
                         route_to_location(max_feature);
+                        max_feature.attributes = max_attributes;
+                        max_feature.attributes["Wait_Time"] = max_feature.attributes["Wait_Time"] + 1;
+                        max_feature.getLayer().applyEdits(null, [max_feature], null);
                     }
                 }, function(error) {
                     console.log("error on query");
@@ -234,16 +242,13 @@
 
                 params.outSpatialReference = map.spatialReference;
 
-                var closestFacilityTask = new RouteTask("/proxy");
+                var routeTask = new RouteTask("/proxy");
 
 
                 console.log(params);
-                closestFacilityTask.solve(params, function(solveResult) {
+                routeTask.solve(params, function(solveResult) {
                     console.log("pass");
                     console.log(solveResult);
-                    console.log(solveResult.routeResults);
-
-
 
                     array.forEach(solveResult.routeResults, function(route, index){
                         console.log("routed!")
