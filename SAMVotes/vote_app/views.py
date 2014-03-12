@@ -110,6 +110,8 @@ def send_text(request):
     auth_token = settings.TWILIO_AUTH_TOKEN
     client = TwilioRestClient(account_sid, auth_token)
 
-    message = client.messages.create(to=number, from_="51269",
-                                     body=body)
+    message = client.messages.create(to=number,
+                                     from_="51269",
+                                     body=body,
+                                     media_url="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/Logo_Media.png")
     return HttpResponse('')

@@ -189,7 +189,7 @@
                         console.log("max_feature");
                         console.log(max_feature);
                         send_text("Your nearest voting location is: "+max_feature.attributes['Address']+" Palm Springs, CA.  " +
-                                "This app brought to you by <a href='eaglemap.com'>Eagle</a>, itnexus.com and Bolt Geographic");
+                                "This app brought to you by eaglemap.com, itnexus.com and Bolt Geographic");
                         route_to_location(max_feature);
                     }
                 }, function(error) {
@@ -225,9 +225,7 @@
 
                 params.outSpatialReference = map.spatialReference;
 
-                //var closestFacilityTask = new ClosestFacilityTask("http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World");
                 var closestFacilityTask = new RouteTask("/proxy");
-                //var closestFacilityTask = new ClosestFacilityTask("http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Network/USA/NAServer/Closest Facility");
 
 
                 console.log(params);
