@@ -12,6 +12,7 @@ from vote_app.views import proxy_view
 from vote_app.views import proxy_view_gp
 from vote_app.views import load_test
 from vote_app.views import generate_token_view
+from vote_app.views import text_count
 
 urlpatterns = patterns('',
     # Examples:
@@ -39,4 +40,5 @@ urlpatterns = patterns('',
     url(r'^proxy_gp/(?P<path>.*)', proxy_view_gp),
     url(r'^loaderio-5aae65f5b1da419918b14ce0624c494d', load_test),
     url(r'^generate_token', generate_token_view),
+    url(r'^text_count', text_count),
 )

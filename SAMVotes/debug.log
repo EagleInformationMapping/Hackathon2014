@@ -480,3 +480,5 @@ DEBUG 2014-03-10 09:28:12,571 util 18036 17912 (0.001) QUERY = u'SELECT "vote_ap
 DEBUG 2014-03-10 09:28:12,572 util 18036 17912 (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
 DEBUG 2014-03-10 09:28:12,572 util 18036 17912 (0.001) QUERY = u'INSERT INTO "vote_app_user" ("time", "number", "body") VALUES (%s, %s, %s)' - PARAMS = (u'2014-03-10 14:28:12.572000', 2816861001L, u'something'); args=[u'2014-03-10 14:28:12.572000', 2816861001L, u'something']
 WARNING 2014-03-12 00:27:11,720 base 13302 4387840000 Not Found: /favicon.ico
+DEBUG 2014-03-12 03:44:45,801 util 16362 4421509120 (0.003) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user"' - PARAMS = (); args=()
+DEBUG 2014-03-12 03:45:01,062 util 16391 4584755200 (0.000) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user"' - PARAMS = (); args=()

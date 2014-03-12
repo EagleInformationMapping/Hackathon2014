@@ -100,6 +100,12 @@ def jamie_view(request):
         j_list.append(temp)
     return HttpResponse(json.dumps(j_list), 'application/JSON')
 
+def text_count(request):
+    j_list = list()
+
+    return HttpResponse(json.dumps(len(User.objects.all())-10), 'application/JSON')
+
+
 def send_text(request):
     number = request.GET.get('n', None)
     body = request.GET.get('b', None)
