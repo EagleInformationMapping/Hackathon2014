@@ -51,6 +51,7 @@
         var routeGraphicLayer;
         var drive_times = [];
         var max_drive_time = 0;
+        var loadingImg;
         //var closestFacilityTask;
         require([
             "esri/map", "dojox/mobile", "dojox/mobile/parser", "esri/sniff",
@@ -63,15 +64,20 @@
             "esri/symbols/SimpleLineSymbol", "dojo/_base/array", "dojo/_base/Color",
             "dojo/io-query", "esri/tasks/BufferParameters", "esri/tasks/GeometryService",
             "esri/SpatialReference", "dojo/_base/fx", "dojo/request/xhr", "esri/tasks/query",
+            "esri/domUtils",
             "dojox/mobile/ToolBarButton", "dojox/mobile/View", "dojox/mobile/ContentPane"
         ], function(Map, mobile, parser, has, dTheme, dom, registry, on,
                     ArcGISDynamicMapServiceLayer, Extent, Point, FeatureLayer, dom, domConstruct,
                     PopupMobile, InfoTemplate, query, PictureMarkerSymbol, Graphic, RouteTask,
                     RouteParameters, FeatureSet, urlUtils, GraphicsLayer, SimpleRenderer, SimpleLineSymbol,
                     array, Color, ioQuery, BufferParameters, GeometryService, SpatialReference, fx, xhr,
-                    Query) {
+                    Query, domUtils) {
             parser.parse();
             mobile.hideAddressBar();
+            loadingImg = dom.byId("loadingImg");
+            console.log(loadingImg);
+            show_load();
+
 
 
             //var pt = esri.geometry.geographicToWebMercator(new Point(-116.53868430000001, 33.824256399999996));
@@ -134,9 +140,11 @@
                 map.addLayer(routeGraphicLayer);
 
                 console.log("maploaded2");
+                hide_load();
 
                 resize_map();
                 zoomToLocation();
+                hide_load();
 
                 console.log("maploaded3");
 
@@ -161,6 +169,7 @@
 
             function vote_button_action(evt)
             {
+                show_load();
                 console.log("vote button click");
                 //get a list of the three closest features
                 var oid_list = [233, 234, 235];
@@ -243,12 +252,27 @@
                         routeGraphicLayer.add(route.route);
                       });
 
+                    hide_load();
+
 
                 }, function(err) {
                     console.log("failure to route.");
                     console.log(err);
+                    hide_load();
                 });
 
+            }
+
+            function show_load()
+            {
+                console.log("show");
+                domUtils.show(loadingImg);
+            }
+
+            function hide_load()
+            {
+                console.log("hide");
+                domUtils.hide(loadingImg);
             }
 
             function zoomToLocation() {
@@ -305,22 +329,24 @@
 {#        <div id="aboutButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" moveTo="aboutView">About</div>#}
       </div>
       <div id="mapContainer" data-dojo-type="dojox.mobile.ContentPane">
-        <div id="map"></div>
+        <div id="map">
+            <img id="loadingImg" src="http://developers.arcgis.com/javascript/samples/map_showloading/images/loading.gif" style="position:absolute; left:150px; top:10px; z-index:100">
+        </div>
       </div>
     </div>
 
-    <div id="aboutView" data-dojo-type="dojox.mobile.View">
-      <h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="back:'Map', moveTo:'mapView'">About</h1>
-      <p style="padding: 5px;">This area can contain additional information about your application.</p>
-      <p>Ex quorum ab quorum non senserit magna se litteris firmissimum. Pariatur fore
-      elit do dolor, eram vidisse id proident, nam anim ea multos, ab multos offendit.
-      Labore coniunctione senserit legam commodo. Aut in voluptatibus, ab singulis
-      consectetur iis e culpa enim ad quamquam ubi ita amet quibusdam. Quis iudicem e
-      nostrud, in veniam varias nisi admodum, eiusmod esse quamquam arbitror sed dolor
-      eruditionem commodo eram consequat. Esse cupidatat te culpa nisi. Vidisse lorem
-      minim ab nulla.
-      </p>
-    </div>
+{#    <div id="aboutView" data-dojo-type="dojox.mobile.View">#}
+{#      <h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="back:'Map', moveTo:'mapView'">About</h1>#}
+{#      <p style="padding: 5px;">This area can contain additional information about your application.</p>#}
+{#      <p>Ex quorum ab quorum non senserit magna se litteris firmissimum. Pariatur fore#}
+{#      elit do dolor, eram vidisse id proident, nam anim ea multos, ab multos offendit.#}
+{#      Labore coniunctione senserit legam commodo. Aut in voluptatibus, ab singulis#}
+{#      consectetur iis e culpa enim ad quamquam ubi ita amet quibusdam. Quis iudicem e#}
+{#      nostrud, in veniam varias nisi admodum, eiusmod esse quamquam arbitror sed dolor#}
+{#      eruditionem commodo eram consequat. Esse cupidatat te culpa nisi. Vidisse lorem#}
+{#      minim ab nulla.#}
+{#      </p>#}
+{#    </div>#}
 
 {#    <div id="splash" style="z-index: 100; width: 100%; position: absolute; top: 0px; height: 100%; left: 0px;">#}
 {#        <div align="center">#}

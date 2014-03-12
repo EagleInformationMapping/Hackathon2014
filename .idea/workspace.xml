@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d51f9a74-ce2e-4169-8388-1a16687e09d6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/templates/mobile_app_demo.html" afterPath="$PROJECT_DIR$/SAMVotes/templates/mobile_app_demo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/vote_app/views.py" afterPath="$PROJECT_DIR$/SAMVotes/vote_app/views.py" />
     </list>
     <ignored path="Hackathon2014.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +43,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="134" selection-start="4568" selection-end="4568" vertical-scroll-proportion="0.7969052" vertical-offset="1148" max-vertical-offset="1665">
-              <folding />
+            <state line="84" column="36" selection-start="3385" selection-end="3385" vertical-scroll-proportion="0.0" vertical-offset="1148" max-vertical-offset="1665">
+              <folding>
+                <marker date="1394607967000" expanded="true" signature="3332:3704" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,11 +63,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mobile_app_demo.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="mobile_app_demo.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/templates/mobile_app_demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="137" selection-start="10909" selection-end="10992" vertical-scroll-proportion="-1.3469387" vertical-offset="3789" max-vertical-offset="5070">
-              <folding />
+            <state line="331" column="22" selection-start="13400" selection-end="13400" vertical-scroll-proportion="0.5833333" vertical-offset="4692" max-vertical-offset="5460">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,8 +98,8 @@
         <option value="$PROJECT_DIR$/web.config" />
         <option value="$PROJECT_DIR$/SAMVotes/templates/mobile_app.html" />
         <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" />
-        <option value="$PROJECT_DIR$/SAMVotes/templates/mobile_app_demo.html" />
         <option value="$PROJECT_DIR$/SAMVotes/vote_app/views.py" />
+        <option value="$PROJECT_DIR$/SAMVotes/templates/mobile_app_demo.html" />
       </list>
     </option>
   </component>
@@ -601,7 +605,9 @@
     <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="66" column="40" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1545">
-          <folding />
+          <folding>
+            <marker date="1394607967000" expanded="true" signature="3332:3704" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -622,7 +628,9 @@
     <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="0" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1683">
-          <folding />
+          <folding>
+            <marker date="1394607967000" expanded="true" signature="3332:3704" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -643,7 +651,9 @@
     <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="45" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1683">
-          <folding />
+          <folding>
+            <marker date="1394607967000" expanded="true" signature="3332:3704" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,6 +676,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="36" selection-start="3385" selection-end="3385" vertical-scroll-proportion="0.0" vertical-offset="1148" max-vertical-offset="1665">
+          <folding>
+            <marker date="1394607967000" expanded="true" signature="3332:3704" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/templates/mobile_app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="219" column="100" selection-start="10437" selection-end="10446" vertical-scroll-proportion="-3.1836734" vertical-offset="3129" max-vertical-offset="6045">
@@ -675,15 +694,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/templates/mobile_app_demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="137" selection-start="10909" selection-end="10992" vertical-scroll-proportion="-1.3469387" vertical-offset="3789" max-vertical-offset="5070">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="134" selection-start="4568" selection-end="4568" vertical-scroll-proportion="0.7969052" vertical-offset="1148" max-vertical-offset="1665">
-          <folding />
+        <state line="331" column="22" selection-start="13400" selection-end="13400" vertical-scroll-proportion="0.5833333" vertical-offset="4692" max-vertical-offset="5460">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
