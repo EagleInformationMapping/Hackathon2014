@@ -13,7 +13,7 @@ from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 
 def load_test(request):
-    return HttpResponse("loaderio-5aae65f5b1da419918b14ce0624c494d", 'text/plain')
+    return HttpResponse("loaderio-5aae65f5b1da419918b14ce0624c494d")#, 'text/plain')
 
 def _get_token():
     return 'ghCA6D98-0GMrN0XgButJzZVek1jC-WOZ0Cw5aiaurvpuHPqSgeX54xK88Ds9bNoQWAlGRSbIOUe-RSIleKr88G_FsNDXJV1ysHTjc3aMZoWetQRCtOtUvslpaRtGJyF6KgKFH53o3tMZfja1ARvmg..'
