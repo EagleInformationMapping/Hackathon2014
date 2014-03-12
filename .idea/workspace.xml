@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d51f9a74-ce2e-4169-8388-1a16687e09d6" name="Default" comment="" />
+    <list default="true" id="d51f9a74-ce2e-4169-8388-1a16687e09d6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/debug.log" afterPath="$PROJECT_DIR$/SAMVotes/debug.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" afterPath="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/vote_app/views.py" afterPath="$PROJECT_DIR$/SAMVotes/vote_app/views.py" />
+    </list>
     <ignored path="Hackathon2014.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,19 +36,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings_prod.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings_prod.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/settings_prod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="1" selection-start="60" selection-end="72" vertical-scroll-proportion="0.10273973" vertical-offset="0" max-vertical-offset="438">
+            <state line="3" column="1" selection-start="60" selection-end="72" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="37" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="267" max-vertical-offset="705">
+            <state line="13" column="46" selection-start="487" selection-end="487" vertical-scroll-proportion="0.36144578" vertical-offset="0" max-vertical-offset="675">
               <folding />
             </state>
           </provider>
@@ -53,7 +57,27 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="63" selection-start="3980" selection-end="3980" vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="1755">
+            <state line="115" column="0" selection-start="4410" selection-end="4410" vertical-scroll-proportion="0.0" vertical-offset="1623" max-vertical-offset="2070">
+              <folding>
+                <element signature="e#26#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sms_messages.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/site-packages/twilio/rest/resources/sms_messages.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="30" selection-start="891" selection-end="891" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="2895">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/site-packages/twilio/rest/resources/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="216" column="8" selection-start="6885" selection-end="6885" vertical-scroll-proportion="0.0" vertical-offset="2937" max-vertical-offset="6360">
               <folding />
             </state>
           </provider>
@@ -102,11 +126,11 @@
         <option value="$PROJECT_DIR$/web.config" />
         <option value="$PROJECT_DIR$/SAMVotes/templates/mobile_app.html" />
         <option value="$PROJECT_DIR$/SAMVotes/templates/mobile_app_demo.html" />
-        <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" />
-        <option value="$PROJECT_DIR$/SAMVotes/vote_app/views.py" />
         <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/settings.py" />
         <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/settings_prod.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/SAMVotes/vote_app/views.py" />
+        <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" />
       </list>
     </option>
   </component>
@@ -560,7 +584,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25971222" sideWeight="0.61315787" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39898133" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3986842" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3868421" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -584,24 +608,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="33" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="40" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/templates/mobile_app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="258" column="0" selection-start="10676" selection-end="10676" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5066">
@@ -619,7 +629,9 @@
     <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="0" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1683">
-          <folding />
+          <folding>
+            <element signature="e#26#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -640,7 +652,9 @@
     <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="45" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1683">
-          <folding />
+          <folding>
+            <element signature="e#26#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,20 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="37" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="267" max-vertical-offset="705">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="63" selection-start="3980" selection-end="3980" vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="1755">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
@@ -696,7 +696,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/settings_prod.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="1" selection-start="60" selection-end="72" vertical-scroll-proportion="0.10273973" vertical-offset="0" max-vertical-offset="438">
+        <state line="3" column="1" selection-start="60" selection-end="72" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site-packages/twilio/rest/resources/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="216" column="8" selection-start="6885" selection-end="6885" vertical-scroll-proportion="0.0" vertical-offset="2937" max-vertical-offset="6360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site-packages/twilio/rest/resources/sms_messages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="30" selection-start="891" selection-end="891" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="2895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="0" selection-start="4410" selection-end="4410" vertical-scroll-proportion="0.0" vertical-offset="1623" max-vertical-offset="2070">
+          <folding>
+            <element signature="e#26#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="46" selection-start="487" selection-end="487" vertical-scroll-proportion="0.36144578" vertical-offset="0" max-vertical-offset="675">
           <folding />
         </state>
       </provider>

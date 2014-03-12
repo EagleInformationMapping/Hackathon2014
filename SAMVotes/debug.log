@@ -482,3 +482,122 @@ DEBUG 2014-03-10 09:28:12,572 util 18036 17912 (0.001) QUERY = u'INSERT INTO "vo
 WARNING 2014-03-12 00:27:11,720 base 13302 4387840000 Not Found: /favicon.ico
 DEBUG 2014-03-12 03:44:45,801 util 16362 4421509120 (0.003) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user"' - PARAMS = (); args=()
 DEBUG 2014-03-12 03:45:01,062 util 16391 4584755200 (0.000) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user"' - PARAMS = (); args=()
+DEBUG 2014-03-12 04:59:50,963 util 17817 4492914688 (0.003) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" DESC' - PARAMS = (); args=()
+DEBUG 2014-03-12 05:01:35,701 util 17817 4492914688 (0.001) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" DESC' - PARAMS = (); args=()
+DEBUG 2014-03-12 05:01:46,757 util 17817 4492914688 (0.001) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" DESC' - PARAMS = (); args=()
+DEBUG 2014-03-12 05:02:07,704 util 17817 4492914688 (0.000) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" DESC' - PARAMS = (); args=()
+DEBUG 2014-03-12 05:03:51,663 util 17856 4385349632 (0.000) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" DESC' - PARAMS = (); args=()
+DEBUG 2014-03-12 05:03:57,762 util 17856 4385349632 (0.001) QUERY = u'SELECT "vote_app_user"."id", "vote_app_user"."time", "vote_app_user"."number", "vote_app_user"."body" FROM "vote_app_user" ORDER BY "vote_app_user"."time" DESC' - PARAMS = (); args=()
+ERROR 2014-03-12 05:04:24,370 base 17870 4409987072 Internal Server Error: /jamie
+Traceback (most recent call last):
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/vote_app/views.py", line 102, in jamie_view
+    return HttpResponse(json.dumps(smss), 'application/JSON')
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 243, in dumps
+    return _default_encoder.encode(obj)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <twilio.rest.resources.sms_messages.ShortCode object at 0x106f0dd50> is not JSON serializable
+ERROR 2014-03-12 05:05:51,649 base 17901 4542447616 Internal Server Error: /jamie
+Traceback (most recent call last):
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/vote_app/views.py", line 102, in jamie_view
+    j_list.append({'body': x.body, 'number': x.number})
+AttributeError: 'ShortCode' object has no attribute 'body'
+ERROR 2014-03-12 05:08:27,797 base 17931 4497584128 Internal Server Error: /jamie
+Traceback (most recent call last):
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/vote_app/views.py", line 102, in jamie_view
+    j_list.append({'body': x['body'], 'number': x['number']})
+TypeError: 'ShortCode' object has no attribute '__getitem__'
+ERROR 2014-03-12 05:10:55,216 base 17979 4502831104 Internal Server Error: /jamie
+Traceback (most recent call last):
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/vote_app/views.py", line 103, in jamie_view
+    j_list.append({'body': x['body'], 'number': x['number']})
+TypeError: 'SmsMessage' object has no attribute '__getitem__'
+ERROR 2014-03-12 05:11:26,308 base 17996 4425732096 Internal Server Error: /jamie
+Traceback (most recent call last):
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/vote_app/views.py", line 103, in jamie_view
+    j_list.append({'body': x.body, 'number': x.number})
+AttributeError: 'SmsMessage' object has no attribute 'number'
+ERROR 2014-03-12 05:11:39,209 base 18001 4424200192 Internal Server Error: /jamie
+Traceback (most recent call last):
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/vote_app/views.py", line 103, in jamie_view
+    j_list.append({'body': x.body, 'number': x.From})
+AttributeError: 'SmsMessage' object has no attribute 'From'
+ERROR 2014-03-12 05:11:55,594 base 18011 4479205376 Internal Server Error: /jamie
+Traceback (most recent call last):
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/handlers/base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 573, in is_valid_path
+    resolve(path, urlconf)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 453, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/SAMVotes/urls.py", line 2, in <module>
+    from vote_app.views import reply_to_sms_messages
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/vote_app/views.py", line 103
+    j_list.append({'body': x.body, 'number': x.from})
+                                                  ^
+SyntaxError: invalid syntax
+ERROR 2014-03-12 05:12:16,269 base 18019 4450410496 Internal Server Error: /jamie
+Traceback (most recent call last):
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/handlers/base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 573, in is_valid_path
+    resolve(path, urlconf)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 453, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/SAMVotes/urls.py", line 2, in <module>
+    from vote_app.views import reply_to_sms_messages
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/vote_app/views.py", line 103
+    j_list.append({'body': x.body, 'number': x.from})
+                                                  ^
+SyntaxError: invalid syntax
+ERROR 2014-03-12 05:14:13,101 base 18043 4499795968 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/cmoravec/PycharmProjects/Hackathon2014/SAMVotes/SAMVotes/urls.py", line 15, in <module>
+    from vote_app.views import text_count
+ImportError: cannot import name text_count

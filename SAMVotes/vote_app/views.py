@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.conf import settings
 from django.views.generic import TemplateView
 from twilio.rest import TwilioRestClient
-from models import User
+#from models import User
 import json
 import datetime
 from django.views.generic import TemplateView
@@ -81,29 +81,39 @@ class MobileApp(TemplateView):
 
 def reply_to_sms_messages(request):
 
-    u = User()
-    u.body = request.GET.get('Body')
-    u.number = request.GET.get('From')
-    u.time = datetime.datetime.now()
-    u.save()
+    # u = User()
+    # u.body = request.GET.get('Body')
+    # u.number = request.GET.get('From')
+    # u.time = datetime.datetime.now()
+    # u.save()
     l = request.GET.get('From')
     r = HttpResponse('<Response><Sms>Thanks! Check out your nearest polling location! {}</Sms></Response>'.format('http://hackathon2014.azurewebsites.net/?p={}'.format(l)), 'text/XML')
     return r
 
 def jamie_view(request):
-    j_list = list()
 
-    for i in User.objects.order_by('-time').all():
-        temp = dict()
-        temp['body'] = i.body
-        temp['number'] = i.number
-        j_list.append(temp)
+    account_sid = settings.TWILIO_ACCOUNT_SID
+    auth_token = settings.TWILIO_AUTH_TOKEN
+    client = TwilioRestClient(account_sid, auth_token)
+
+    smss = client.sms.messages.list()
+    j_list = list()
+    for x in smss:
+        if x.to == u'51269':
+            j_list.append({'body': x.body, 'number': x.from_})
+    print j_list
+
     return HttpResponse(json.dumps(j_list), 'application/JSON')
 
-def text_count(request):
-    j_list = list()
+    # j_list = list()
+    #
+    # for i in User.objects.order_by('-time').all():
+    #     temp = dict()
+    #     temp['body'] = i.body
+    #     temp['number'] = i.number
+    #     j_list.append(temp)
+    # return HttpResponse(json.dumps(j_list), 'application/JSON')
 
-    return HttpResponse(json.dumps(len(User.objects.all())-10), 'application/JSON')
 
 
 def send_text(request):
