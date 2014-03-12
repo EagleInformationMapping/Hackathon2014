@@ -28,7 +28,7 @@ def generate_token_view(request):
 
 
 def _get_token():
-    return '-VC2Pc-_UszjkuafHlzUi4j2WrYSn4F6En9BMi3bgliVRi_Effw1OUUdg8Y5wEsfmBmIiRqbMGp5H-PqIIbJB96IdBGoD8RbukiyWhMTbDIrw2bJPRElD4g_9mO-Y0tD8-m-uqAoB6hd6LsKss0naQ..'
+    return 'ee25FWRqLU0AtgTEUH5tcmabC6zu-qk5fSlsFVMXAqNL9CdOXvBG1nfxURkumHm9lgLgIG9k4rbJluwiw-c_EM8hI8T99KHCdbPYdkBTSb7NrFDOoW4mHc6bSGy7D_mg7691yjKPhNtiJrzsdICebg..'
 
 @csrf_exempt
 @require_http_methods(["GET", "POST"])

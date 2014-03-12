@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d51f9a74-ce2e-4169-8388-1a16687e09d6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/debug.log" afterPath="$PROJECT_DIR$/SAMVotes/debug.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" afterPath="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/vote_app/views.py" afterPath="$PROJECT_DIR$/SAMVotes/vote_app/views.py" />
     </list>
     <ignored path="Hackathon2014.iws" />
@@ -45,19 +43,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="46" selection-start="487" selection-end="487" vertical-scroll-proportion="0.36144578" vertical-offset="0" max-vertical-offset="675">
+            <state line="13" column="46" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="675">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="0" selection-start="4410" selection-end="4410" vertical-scroll-proportion="0.0" vertical-offset="1623" max-vertical-offset="2070">
+            <state line="30" column="0" selection-start="1019" selection-end="1019" vertical-scroll-proportion="0.5970149" vertical-offset="210" max-vertical-offset="2070">
               <folding>
                 <element signature="e#26#62#0" expanded="true" />
               </folding>
@@ -129,8 +127,8 @@
         <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/settings.py" />
         <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/settings_prod.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/SAMVotes/vote_app/views.py" />
         <option value="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" />
+        <option value="$PROJECT_DIR$/SAMVotes/vote_app/views.py" />
       </list>
     </option>
   </component>
@@ -715,19 +713,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
+    <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="0" selection-start="4410" selection-end="4410" vertical-scroll-proportion="0.0" vertical-offset="1623" max-vertical-offset="2070">
-          <folding>
-            <element signature="e#26#62#0" expanded="true" />
-          </folding>
+        <state line="13" column="46" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="675">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
+    <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="46" selection-start="487" selection-end="487" vertical-scroll-proportion="0.36144578" vertical-offset="0" max-vertical-offset="675">
-          <folding />
+        <state line="30" column="0" selection-start="1019" selection-end="1019" vertical-scroll-proportion="0.5970149" vertical-offset="210" max-vertical-offset="2070">
+          <folding>
+            <element signature="e#26#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
