@@ -12,11 +12,23 @@ import proxy.views
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 
+
 def load_test(request):
     return HttpResponse("loaderio-5aae65f5b1da419918b14ce0624c494d")#, 'text/plain')
 
+
+def generate_token_view(request):
+    context = {}
+    h = Http()
+    resp, content = h.request("https://www.arcgis.com/sharing/oauth2/token?client_id=IWuR7oUBNlG38ytK&client_secret=012e8dc3d4854c978b11106b2e49a227&grant_type=client_credentials&expires_in=86400")
+    data = json.loads(content)
+    context['token_response'] = content
+    context['token'] = data['access_token']
+    return HttpResponse(json.dumps(context), 'application/json')
+
+
 def _get_token():
-    return 'ghCA6D98-0GMrN0XgButJzZVek1jC-WOZ0Cw5aiaurvpuHPqSgeX54xK88Ds9bNoQWAlGRSbIOUe-RSIleKr88G_FsNDXJV1ysHTjc3aMZoWetQRCtOtUvslpaRtGJyF6KgKFH53o3tMZfja1ARvmg..'
+    return '-VC2Pc-_UszjkuafHlzUi4j2WrYSn4F6En9BMi3bgliVRi_Effw1OUUdg8Y5wEsfmBmIiRqbMGp5H-PqIIbJB96IdBGoD8RbukiyWhMTbDIrw2bJPRElD4g_9mO-Y0tD8-m-uqAoB6hd6LsKss0naQ..'
 
 @csrf_exempt
 @require_http_methods(["GET", "POST"])
@@ -24,11 +36,15 @@ def proxy_view(request, path):
     #extra_requests_args = {'params': request.GET.copy()}
     #extra_requests_args = {'data': request.POST.copy()}
     extra_requests_args = {'params': request.GET.copy(), 'data': request.POST.copy()}
+    extra_requests_args['params']['token'] = _get_token()
+    extra_requests_args['data']['token'] = _get_token()
     #request.method = 'POST'
     #extra_requests_args['params']['token'] = _get_token()
     print(extra_requests_args)
     print(path)
-    remoteurl = 'http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Network/USA/NAServer/Route/' + path
+    #remoteurl = 'http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Network/USA/NAServer/Route/' + path
+    #remoteurl = 'http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/Route/' + path
+    remoteurl = 'http://tasks.arcgisonline.com/ArcGIS/rest/services/NetworkAnalysis/ESRI_Route_NA/NAServer/Route/' + path
     #remoteurl = path
     # if remoteurl.find("?") > -1:
     #     remoteurl = remoteurl + "&token="+_get_token()
@@ -57,7 +73,7 @@ def proxy_view_gp(request, path):
 
 
 class MobileApp(TemplateView):
-    template_name = 'mobile_app.html'
+    template_name = 'mobile_app_demo.html'
 
     def get_context_data(self, **kwargs):
         context = super(MobileApp, self).get_context_data(**kwargs)

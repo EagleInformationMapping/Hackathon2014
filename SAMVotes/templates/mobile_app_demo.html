@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/SAM-76x76.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/SAM-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/SAM-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/SAM-152x152.png">
+    <title>SAM Votes!</title>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css">
+{#    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css">#}
+
+    <style>
+        html, body, .mblView {
+          height: 100%;
+          margin: 0px;
+          padding: 0px;
+          width: 100%;
+        }
+
+        #mapView {
+          height:	100%;
+        }
+
+        #map {
+          position:relative;
+          width:	100%;
+          height:	100%;
+        }
+
+        p.gold{
+            font-family: Arial, sans-serif;
+            color: #D9B516;
+            }
+
+
+    </style>
+
+    <script>var dojoConfig = {
+        mblAlwaysHideAddressBar: true
+    };</script>
+    <script src="http://js.arcgis.com/3.8compact"></script>
+    <script>
+        var map;
+        var pollingplaces_layer;
+        var token = "{{ token }}";
+        var map_location;
+        var routeGraphicLayer;
+        var drive_times = [];
+        var max_drive_time = 0;
+        //var closestFacilityTask;
+        require([
+            "esri/map", "dojox/mobile", "dojox/mobile/parser", "esri/sniff",
+            "dojox/mobile/deviceTheme", "dojo/dom", "dijit/registry", "dojo/on",
+            "esri/layers/ArcGISDynamicMapServiceLayer", "esri/geometry/Extent", "esri/geometry/Point",
+            "esri/layers/FeatureLayer", "dojo/dom", "dojo/dom-construct", "esri/dijit/PopupMobile",
+            "esri/InfoTemplate", "dojo/query", "esri/symbols/PictureMarkerSymbol", "esri/graphic",
+            "esri/tasks/RouteTask", "esri/tasks/RouteParameters", "esri/tasks/FeatureSet",
+            "esri/urlUtils", "esri/layers/GraphicsLayer", "esri/renderers/SimpleRenderer",
+            "esri/symbols/SimpleLineSymbol", "dojo/_base/array", "dojo/_base/Color",
+            "dojo/io-query", "esri/tasks/BufferParameters", "esri/tasks/GeometryService",
+            "esri/SpatialReference", "dojo/_base/fx", "dojo/request/xhr", "esri/tasks/query",
+            "dojox/mobile/ToolBarButton", "dojox/mobile/View", "dojox/mobile/ContentPane"
+        ], function(Map, mobile, parser, has, dTheme, dom, registry, on,
+                    ArcGISDynamicMapServiceLayer, Extent, Point, FeatureLayer, dom, domConstruct,
+                    PopupMobile, InfoTemplate, query, PictureMarkerSymbol, Graphic, RouteTask,
+                    RouteParameters, FeatureSet, urlUtils, GraphicsLayer, SimpleRenderer, SimpleLineSymbol,
+                    array, Color, ioQuery, BufferParameters, GeometryService, SpatialReference, fx, xhr,
+                    Query) {
+            parser.parse();
+            mobile.hideAddressBar();
+
+
+            //var pt = esri.geometry.geographicToWebMercator(new Point(-116.53868430000001, 33.824256399999996));
+            //map_location = new Graphic(pt);
+
+            var popup = new PopupMobile(null, domConstruct.create("div"));
+
+
+
+
+            map = new Map("map", {
+                center: [-116.53868430000001, 33.824256399999996],
+                zoom: 13,
+                basemap: "streets",
+                //showInfoWindowOnClick:true,
+                infoWindow: popup
+                });
+            map.on("load", map_loaded);
+
+            var resizeEvt = (window.onorientationchange !== undefined && !has('android')) ? "orientationchange" : "resize";
+            on(window, resizeEvt, resize_map);
+
+            function map_loaded()
+            {
+                urlUtils.addProxyRule({
+                    proxyUrl:"/proxy/",
+                    urlPrefix:"http://sampleserver3.arcgisonline.com/ArcGIS/rest"
+                });
+                console.log("maploaded");
+
+                var vote_button = query("#sameVotesButton");
+                console.log(vote_button);
+                on(vote_button, "click", vote_button_action);
+
+
+                //var supervisor_layer = new ArcGISDynamicMapServiceLayer("http://www.rctlma.org/siteadmin/rest/services/Public/Supervisorial_Districts/MapServer", {opacity:.5});
+                //map.addLayer(supervisor_layer);
+
+                var polling_info_template = new InfoTemplate();
+                polling_info_template.setTitle("${Location_Name}");
+                polling_info_template.setContent('<div style="width: 300px; background-color: #0B1A8D;" ><p align="center" class="gold">${Location_Name}</p><p align="center" class="gold">${Wait_Time} Min. Wait</p><p align="center" class="gold">${Address}</p></div>');
+                var polling_layer_options = {
+                                                refreshInterval:1,
+                                                infoTemplate: polling_info_template,
+                                                outFields:["Location_Name", "Wait_Time", "OBJECTID", "Address"]
+                                            };
+                pollingplaces_layer = new FeatureLayer("http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/arcgis/rest/services/Voting_Locations/FeatureServer/0", polling_layer_options);
+                map.addLayer(pollingplaces_layer);
+
+                routeGraphicLayer = new GraphicsLayer();
+
+                var routePolylineSymbol = new SimpleLineSymbol(
+                  SimpleLineSymbol.STYLE_SOLID,
+                  new Color([89,95,35]),
+                  4.0
+                );
+                var routeRenderer = new SimpleRenderer(routePolylineSymbol);
+                routeGraphicLayer.setRenderer(routeRenderer);
+
+                map.addLayer(routeGraphicLayer);
+
+                console.log("maploaded2");
+
+                resize_map();
+                zoomToLocation();
+
+                console.log("maploaded3");
+
+            }
+
+            function send_text(message)
+            {
+                var uri = window.location.search;
+                var query = uri.substring(uri.indexOf("?") + 1, uri.length);
+                var queryObject = dojo.queryToObject(query);
+                console.log(queryObject);
+                if (queryObject.p)
+                {
+                    var new_query = {
+                        n:queryObject.p,
+                        b:message
+                    };
+                    console.log("call the text message app!");
+                    xhr("/send_text?" + ioQuery.objectToQuery(new_query));
+                }
+            }
+
+            function vote_button_action(evt)
+            {
+                console.log("vote button click");
+                //get a list of the three closest features
+                var oid_list = [233, 234, 235];
+
+                var query = new Query();
+                query.objectIds = oid_list;
+                query.outFields = ["Location_Name", "Wait_Time", "OBJECTID", "Address"];
+                query.outSpatialReference = map.spatialReference;
+                query.returnGeometry = true;
+
+                var max_time = 500;
+                var max_feature;
+                pollingplaces_layer.queryFeatures(query, function(result) {
+                    console.log("query return.");
+                    console.log(result);
+                    array.forEach(result.features, function(data, index) {
+                        console.log(data, index);
+                       if (data.attributes["Wait_Time"] < max_time)
+                       {
+                           max_time = data.attributes["Wait_Time"];
+                           max_feature = data;
+                           console.log(data);
+                       }
+                    });
+                    if (max_feature) {
+                        console.log("max_feature");
+                        console.log(max_feature);
+                        route_to_location(max_feature);
+                    }
+                }, function(error) {
+                    console.log("error on query");
+                    console.log(error);
+
+                });
+
+
+
+                //select figure out which one has the lowest value
+
+                //pass that one to route_to_location
+            }
+
+            function route_to_location(location)
+            {
+
+                var params = new RouteParameters();
+                params.impedenceAttribute= "Miles";
+                params.defaultCutoff= 3.0;
+                params.returnIncidents=false;
+                params.returnRoutes=true;
+                params.returnDirections=true;
+                params.defaultTargetFacilityCount = 5;
+                params.returnFacilities=false;
+
+
+                var stops = new FeatureSet();
+                location.attributes = {};
+                stops.features = [map_location, location];
+                params.stops = stops;
+
+                params.outSpatialReference = map.spatialReference;
+
+                //var closestFacilityTask = new ClosestFacilityTask("http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World");
+                var closestFacilityTask = new RouteTask("/proxy");
+                //var closestFacilityTask = new ClosestFacilityTask("http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Network/USA/NAServer/Closest Facility");
+
+
+                console.log(params);
+                closestFacilityTask.solve(params, function(solveResult) {
+                    console.log("pass");
+                    console.log(solveResult);
+                    console.log(solveResult.routeResults);
+
+
+
+                    array.forEach(solveResult.routeResults, function(route, index){
+                        console.log("routed!")
+                        console.log(route);
+                        routeGraphicLayer.clear();
+                        routeGraphicLayer.add(route.route);
+                      });
+
+
+                }, function(err) {
+                    console.log("failure to route.");
+                    console.log(err);
+                });
+
+            }
+
+            function zoomToLocation() {
+                var pt = esri.geometry.geographicToWebMercator(new Point(-116.53868430000001, 33.824256399999996));
+                map_location = new Graphic(pt);
+                map.centerAndZoom(pt, 14);
+                var symbol = new PictureMarkerSymbol("http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/bluedot.png", 50, 50);
+                map.graphics.add(new Graphic(pt, symbol));
+              }
+
+
+            function resize_map() {
+              mobile.hideAddressBar();
+              adjustMapHeight();
+              map.resize();
+              map.reposition();
+            }
+
+            function adjustMapHeight() {
+              var availHeight = mobile.getScreenSize().h - registry.byId('header').domNode.clientHeight - 1;
+              if (has('iphone') || has('ipod')) {
+                availHeight += iphoneAdjustment();
+              }
+              dom.byId("map").style.height = availHeight + "px";
+            }
+
+            function iphoneAdjustment() {
+              var sz = mobile.getScreenSize();
+              if (sz.h > sz.w) { //portrait
+                //Need to add address bar height back to map
+                 return screen.availHeight - window.innerHeight - 40; /* 40 = height of bottom safari toolbar */
+              } else { //landscape
+                //Need to react to full screen / bottom bar visible toggles
+                var _conn = on(window, 'resize', function() {
+                  _conn.remove();
+                  resizeMap();
+                });
+                return 0;
+              }
+            }
+
+
+        });
+
+
+
+
+    </script>
+</head>
+<body>
+    <div id="mapView" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
+      <div id="header" data-dojo-type="dojox.mobile.Heading">
+        <div id="sameVotesButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;">SAM Votes!</div>
+{#        <div id="aboutButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" moveTo="aboutView">About</div>#}
+      </div>
+      <div id="mapContainer" data-dojo-type="dojox.mobile.ContentPane">
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <div id="aboutView" data-dojo-type="dojox.mobile.View">
+      <h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="back:'Map', moveTo:'mapView'">About</h1>
+      <p style="padding: 5px;">This area can contain additional information about your application.</p>
+      <p>Ex quorum ab quorum non senserit magna se litteris firmissimum. Pariatur fore
+      elit do dolor, eram vidisse id proident, nam anim ea multos, ab multos offendit.
+      Labore coniunctione senserit legam commodo. Aut in voluptatibus, ab singulis
+      consectetur iis e culpa enim ad quamquam ubi ita amet quibusdam. Quis iudicem e
+      nostrud, in veniam varias nisi admodum, eiusmod esse quamquam arbitror sed dolor
+      eruditionem commodo eram consequat. Esse cupidatat te culpa nisi. Vidisse lorem
+      minim ab nulla.
+      </p>
+    </div>
+
+{#    <div id="splash" style="z-index: 100; width: 100%; position: absolute; top: 0px; height: 100%; left: 0px;">#}
+{#        <div align="center">#}
+{#            <img style="width:200px;" src="http://ec2-54-193-191-197.us-west-1.compute.amazonaws.com/static/images/splashscreen.png" />#}
+{#        </div>#}
+{#    </div>#}
+
+
+</body>
+</html>
