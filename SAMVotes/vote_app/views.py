@@ -109,6 +109,6 @@ def send_text(request):
     auth_token = settings.TWILIO_AUTH_TOKEN
     client = TwilioRestClient(account_sid, auth_token)
 
-    message = client.messages.create(to=number, from_="+18329248472",
+    message = client.messages.create(to=number, from_="51269",
                                      body=body)
     return HttpResponse('')

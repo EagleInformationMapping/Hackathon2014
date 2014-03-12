@@ -10,7 +10,7 @@ from vote_app.views import send_text
 from vote_app.views import MobileApp
 from vote_app.views import proxy_view
 from vote_app.views import proxy_view_gp
-from vite_app.views import load_test
+from vote_app.views import load_test
 
 urlpatterns = patterns('',
     # Examples:
