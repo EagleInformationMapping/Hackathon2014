@@ -188,6 +188,8 @@
                     if (max_feature) {
                         console.log("max_feature");
                         console.log(max_feature);
+                        send_text("Your nearest voting location is: "+max_feature.attributes['Address']+" Palm Springs, CA.  " +
+                                "This app brought to you by <a href='eaglemap.com'>Eagle</a>, itnexus.com and Bolt Geographic");
                         route_to_location(max_feature);
                     }
                 }, function(error) {
