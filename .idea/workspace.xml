@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d51f9a74-ce2e-4169-8388-1a16687e09d6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" afterPath="$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SAMVotes/vote_app/views.py" afterPath="$PROJECT_DIR$/SAMVotes/vote_app/views.py" />
-    </list>
+    <list default="true" id="d51f9a74-ce2e-4169-8388-1a16687e09d6" name="Default" comment="" />
     <ignored path="Hackathon2014.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +35,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="37" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+            <state line="14" column="37" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="267" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
@@ -47,7 +44,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="61" selection-start="4089" selection-end="4089" vertical-scroll-proportion="0.6517647" vertical-offset="1133" max-vertical-offset="1755">
+            <state line="100" column="63" selection-start="3980" selection-end="3980" vertical-scroll-proportion="0.8635294" vertical-offset="968" max-vertical-offset="1755">
               <folding />
             </state>
           </provider>
@@ -681,14 +678,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/SAMVotes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="37" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+        <state line="14" column="37" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="267" max-vertical-offset="705">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SAMVotes/vote_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="61" selection-start="4089" selection-end="4089" vertical-scroll-proportion="0.6517647" vertical-offset="1133" max-vertical-offset="1755">
+        <state line="100" column="63" selection-start="3980" selection-end="3980" vertical-scroll-proportion="0.8635294" vertical-offset="968" max-vertical-offset="1755">
           <folding />
         </state>
       </provider>
